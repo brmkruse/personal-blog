@@ -1,0 +1,63 @@
+---
+interface Props {
+  title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<button type="button" class="share-btn" data-share-title={title} aria-label="Copy link to clipboard">
+  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+    <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+    <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+  </svg>
+  <span class="label">Share</span>
+</button>
+
+<script>
+  function bindShareButtons() {
+    document.querySelectorAll<HTMLButtonElement>('.share-btn').forEach((btn) => {
+      if (btn.dataset.bound === 'true') return;
+      btn.dataset.bound = 'true';
+      const label = btn.querySelector('.label');
+
+      btn.addEventListener('click', async () => {
+        const url = window.location.href;
+        try {
+          await navigator.clipboard.writeText(url);
+          if (label) label.textContent = 'Copied';
+          window.setTimeout(() => {
+            if (label) label.textContent = 'Share';
+          }, 1800);
+        } catch {
+          if (label) label.textContent = 'Copy failed';
+          window.setTimeout(() => {
+            if (label) label.textContent = 'Share';
+          }, 1800);
+        }
+      });
+    });
+  }
+
+  bindShareButtons();
+  document.addEventListener('astro:page-load', bindShareButtons);
+</script>
+
+<style>
+  .share-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    border: none;
+    background: transparent;
+    color: var(--muted);
+    font: inherit;
+    font-size: 0.9rem;
+    cursor: pointer;
+    padding: 0.35rem 0.15rem;
+  }
+
+  .share-btn:hover {
+    color: var(--text);
+  }
+</style>

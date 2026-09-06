@@ -1,0 +1,82 @@
+---
+import type { CollectionEntry } from 'astro:content';
+
+interface Props {
+  posts: CollectionEntry<'blog'>[];
+}
+
+const { posts } = Astro.props;
+---
+
+{
+  posts.length > 0 && (
+    <section class="keep-reading">
+      <h2>Keep reading</h2>
+      <div class="grid">
+        {
+          posts.map((post) => (
+            <a class="card" href={`/writing/${post.id}`}>
+              <span class="meta">{post.data.category}</span>
+              <span class="title">{post.data.title}</span>
+              <span class="excerpt">{post.data.description}</span>
+            </a>
+          ))
+        }
+      </div>
+    </section>
+  )
+}
+
+<style>
+  .keep-reading {
+    margin: 2.5rem 0 1rem;
+  }
+
+  h2 {
+    margin: 0 0 1rem;
+    font-size: 1.15rem;
+    letter-spacing: -0.02em;
+  }
+
+  .grid {
+    display: grid;
+    gap: 1rem;
+  }
+
+  @media (min-width: 700px) {
+    .grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+
+  .card {
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+    padding: 1rem;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    text-decoration: none;
+    transition: background 0.15s ease;
+  }
+
+  .card:hover {
+    background: var(--hover);
+    text-decoration: none;
+  }
+
+  .meta {
+    color: var(--muted);
+    font-size: 0.8rem;
+  }
+
+  .title {
+    font-weight: 600;
+    letter-spacing: -0.01em;
+  }
+
+  .excerpt {
+    color: var(--muted);
+    font-size: 0.9rem;
+  }
+</style>

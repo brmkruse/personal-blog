@@ -1,0 +1,139 @@
+---
+interface Heading {
+  depth: number;
+  slug: string;
+  text: string;
+}
+
+interface Props {
+  headings: Heading[];
+}
+
+const { headings } = Astro.props;
+const items = headings.filter((h) => h.depth === 2);
+---
+
+{
+  items.length > 0 && (
+    <>
+      <nav class="toc-desktop" aria-label="Table of contents">
+        <p class="toc-label">On this page</p>
+        <ul>
+          {
+            items.map((item) => (
+              <li>
+                <a href={`#${item.slug}`}>{item.text}</a>
+              </li>
+            ))
+          }
+        </ul>
+      </nav>
+
+      <details class="toc-mobile">
+        <summary>On this page</summary>
+        <ul>
+          {
+            items.map((item) => (
+              <li>
+                <a href={`#${item.slug}`}>{item.text}</a>
+              </li>
+            ))
+          }
+        </ul>
+      </details>
+    </>
+  )
+}
+
+<style>
+  .toc-desktop {
+    display: none;
+  }
+
+  .toc-label {
+    margin: 0 0 0.75rem;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+
+  .toc-desktop ul,
+  .toc-mobile ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .toc-desktop li + li,
+  .toc-mobile li + li {
+    margin-top: 0.55rem;
+  }
+
+  .toc-desktop a,
+  .toc-mobile a {
+    color: var(--muted);
+    font-size: 0.875rem;
+    line-height: 1.35;
+    text-decoration: none;
+  }
+
+  .toc-desktop a:hover,
+  .toc-mobile a:hover {
+    color: var(--text);
+  }
+
+  .toc-mobile {
+    position: sticky;
+    top: var(--header-h);
+    z-index: 40;
+    background: rgba(255, 255, 255, 0.96);
+    border-bottom: 1px solid var(--border);
+    padding: 0.65rem 1.25rem;
+    margin: 0 -1.25rem 1.5rem;
+  }
+
+  .toc-mobile summary {
+    cursor: pointer;
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--muted);
+    list-style: none;
+  }
+
+  .toc-mobile summary::-webkit-details-marker {
+    display: none;
+  }
+
+  .toc-mobile summary::after {
+    content: " +";
+    float: right;
+  }
+
+  .toc-mobile[open] summary::after {
+    content: " −";
+  }
+
+  .toc-mobile ul {
+    margin-top: 0.75rem;
+    padding-bottom: 0.35rem;
+  }
+
+  @media (min-width: 1100px) {
+    .toc-mobile {
+      display: none;
+    }
+
+    .toc-desktop {
+      display: block;
+      position: sticky;
+      top: calc(var(--header-h) + 2rem);
+      align-self: start;
+      width: 200px;
+      max-height: calc(100vh - var(--header-h) - 3rem);
+      overflow: auto;
+      padding-right: 1rem;
+    }
+  }
+</style>
