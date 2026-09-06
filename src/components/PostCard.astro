@@ -1,0 +1,74 @@
+---
+import type { CollectionEntry } from 'astro:content';
+
+interface Props {
+  post: CollectionEntry<'blog'>;
+}
+
+const { post } = Astro.props;
+
+const date = post.data.pubDate.toLocaleDateString('en-US', {
+  year: 'numeric',
+  month: 'long',
+  day: 'numeric',
+});
+---
+
+<article class="post-card">
+  <a class="card-link" href={`/writing/${post.id}`}>
+    <div class="meta">
+      <time datetime={post.data.pubDate.toISOString()}>{date}</time>
+      <span aria-hidden="true">·</span>
+      <span>{post.data.category}</span>
+    </div>
+    <h2>{post.data.title}</h2>
+    <p>{post.data.description}</p>
+  </a>
+</article>
+
+<style>
+  .post-card {
+    border-bottom: 1px solid var(--border);
+  }
+
+  .post-card:last-child {
+    border-bottom: none;
+  }
+
+  .card-link {
+    display: block;
+    padding: 1.5rem 0;
+    text-decoration: none;
+  }
+
+  .card-link:hover {
+    text-decoration: none;
+  }
+
+  .card-link:hover h2 {
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+
+  .meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    color: var(--muted);
+    font-size: 0.875rem;
+    margin-bottom: 0.45rem;
+  }
+
+  h2 {
+    margin: 0 0 0.45rem;
+    font-size: 1.25rem;
+    letter-spacing: -0.02em;
+    line-height: 1.3;
+  }
+
+  p {
+    margin: 0;
+    color: var(--muted);
+    font-size: 0.975rem;
+  }
+</style>
