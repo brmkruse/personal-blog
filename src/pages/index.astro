@@ -1,0 +1,88 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import PostCard from '../components/PostCard.astro';
+import { getCollection } from 'astro:content';
+
+const posts = (await getCollection('blog', ({ data }) => !data.draft)).sort(
+  (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
+);
+---
+
+<BaseLayout title="Kruse" description="Notes on learning to code, building small things, and figuring it out as I go.">
+  <Header />
+  <main class="page">
+    <section class="intro">
+      <p class="eyebrow">Personal blog</p>
+      <h1>Learning to code by building real things.</h1>
+      <p class="lede">
+        Hi, I'm Kruse — a coding beginner writing about what I'm learning, what broke,
+        and what finally made sense. Expect honest notes, small projects, and a lot of
+        "wait, why does this work now?"
+      </p>
+    </section>
+
+    <section class="posts" aria-labelledby="latest-writing">
+      <div class="section-head">
+        <h2 id="latest-writing">Latest writing</h2>
+        <a class="all-link" href="/writing">View all</a>
+      </div>
+      <div class="list">
+        {posts.map((post) => <PostCard post={post} />)}
+      </div>
+    </section>
+  </main>
+  <Footer />
+</BaseLayout>
+
+<style>
+  .page {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 3rem 1.25rem 1rem;
+  }
+
+  .eyebrow {
+    margin: 0 0 0.75rem;
+    color: var(--muted);
+    font-size: 0.875rem;
+  }
+
+  h1 {
+    margin: 0 0 1rem;
+    font-size: clamp(2rem, 5vw, 2.75rem);
+    line-height: 1.15;
+    letter-spacing: -0.035em;
+  }
+
+  .lede {
+    margin: 0;
+    color: var(--muted);
+    font-size: 1.1rem;
+    max-width: 38rem;
+  }
+
+  .posts {
+    margin-top: 3.5rem;
+  }
+
+  .section-head {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .section-head h2 {
+    margin: 0;
+    font-size: 1.1rem;
+    letter-spacing: -0.02em;
+  }
+
+  .all-link {
+    color: var(--muted);
+    font-size: 0.9rem;
+  }
+</style>
