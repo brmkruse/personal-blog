@@ -1,0 +1,345 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+
+const competencies = [
+  {
+    title: 'Technical Sales',
+    items: [
+      'Full-cycle ownership',
+      'Multi-threaded deals',
+      'CIO / CISO / CTO engagement',
+      'Discovery & POC / POV',
+      'ROI framing',
+      'Legal & procurement',
+      'Deployment & services',
+    ],
+  },
+  {
+    title: 'Cloud Cybersecurity & AI',
+    items: [
+      'CNAPP / CSPM',
+      'SIEM / MDR / CTEM',
+      'Threat intelligence',
+      'AI / LLM governance',
+      'SDLC & developer workflows',
+      'Frontier LLMs & agents',
+      'DAST',
+      'NIST / ISO / CIS',
+      'FFIEC / HIPAA / PCI',
+    ],
+  },
+  {
+    title: 'GTM',
+    items: [
+      'New logo & expansion',
+      'Territory & pipeline',
+      'Channel / VAR co-sell',
+      'MEDDPICC',
+      'Forecasting',
+      'Cross-functional close',
+    ],
+  },
+];
+
+const roles = [
+  {
+    title: 'Manager, Commercial Sales',
+    company: 'Rapid7',
+    location: 'Austin, TX',
+    dates: '2023 – Aug. 2026',
+    bullets: [
+      'Led commercial GTM for a cybersecurity and AI platform into mid-market accounts.',
+      'Partnered with CIOs, CISOs, SecOps, and cloud/security engineers on exposure management, detection & response, and cloud native application protection.',
+      'President\'s Club performer; activated channel partners and expansion motions alongside Engineering, Product, Legal, and executives.',
+    ],
+  },
+  {
+    title: 'Senior Account Executive, Mid-Market',
+    company: 'BigCommerce',
+    location: 'Austin, TX',
+    dates: '2018 – 2023',
+    bullets: [
+      'Owned full-cycle sales of a headless commerce platform to mid-market buyers.',
+      'Sold to engineers, DevOps/SRE, and CTOs on APIs, integrations, and performance.',
+    ],
+  },
+  {
+    title: 'Senior Manager, Enterprise Sales Development',
+    company: 'BigCommerce',
+    location: 'Austin, TX',
+    dates: null,
+    bullets: [
+      'Led the enterprise SDR organization; developed talent and raised the bar on execution.',
+      'Restructured inbound, outbound, and account development motions.',
+    ],
+  },
+  {
+    title: 'Manager, Outbound Business',
+    company: 'Box, Inc.',
+    location: 'Austin, TX',
+    dates: '2016 – 2018',
+    bullets: [
+      'Led outbound for Enterprise and Strategic segments.',
+      'Built a Platform/API outbound motion engaging engineering leaders and CTOs.',
+    ],
+  },
+];
+---
+
+<BaseLayout
+  title="Professional"
+  description="Brandon M. Kruse — Account Executive | Technical Sales | Cybersecurity & AI. Experience, competencies, and education."
+>
+  <Header />
+  <main class="page">
+    <header class="hero">
+      <p class="eyebrow">Professional</p>
+      <h1>Brandon M. Kruse</h1>
+      <p class="headline">Account Executive · Technical Sales · Cybersecurity &amp; AI</p>
+      <p class="meta">
+        <span>Austin, TX</span>
+        <span aria-hidden="true">·</span>
+        <a href="mailto:brmkruse@gmail.com">brmkruse@gmail.com</a>
+        <span aria-hidden="true">·</span>
+        <a href="https://linkedin.com/in/krusebrandon" rel="noopener noreferrer" target="_blank"
+          >linkedin.com/in/krusebrandon</a
+        >
+      </p>
+    </header>
+
+    <section class="section" aria-labelledby="summary-heading">
+      <h2 id="summary-heading">Summary</h2>
+      <p class="summary">
+        Consultative seller with over a decade leading and supporting complex cloud software
+        sales into mid-market and enterprise. Recently led commercial GTM for Rapid7's
+        cybersecurity platform, partnering with CIOs, CISOs, SecOps, and IT buyers on exposure
+        management, detection &amp; response, and cloud native application protection. President's
+        Club performer who builds territories, activates channel partners, and partners with
+        Engineering, Product, Legal, and executives. Domain depth in cybersecurity and emerging AI
+        — frontier models, agentic workflows — with a Mechanical Engineering foundation.
+      </p>
+      <p class="summary emphasis">
+        Comfortable selling technical products and services: translating architecture and risk
+        into clear commercial outcomes for technical and executive buyers alike.
+      </p>
+    </section>
+
+    <section class="section" aria-labelledby="competencies-heading">
+      <h2 id="competencies-heading">Core competencies</h2>
+      <div class="comp-grid">
+        {
+          competencies.map((group) => (
+            <div class="comp-card">
+              <h3>{group.title}</h3>
+              <ul>
+                {group.items.map((item) => (
+                  <li>{item}</li>
+                ))}
+              </ul>
+            </div>
+          ))
+        }
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="experience-heading">
+      <h2 id="experience-heading">Experience</h2>
+      <div class="roles">
+        {
+          roles.map((role) => (
+            <article class="role">
+              <div class="role-head">
+                <h3>{role.title}</h3>
+                <p class="role-org">
+                  {role.company}
+                  <span aria-hidden="true">·</span>
+                  {role.location}
+                  {role.dates && (
+                    <>
+                      <span aria-hidden="true">·</span>
+                      <span class="dates">{role.dates}</span>
+                    </>
+                  )}
+                </p>
+              </div>
+              <ul>
+                {role.bullets.map((b) => (
+                  <li>{b}</li>
+                ))}
+              </ul>
+            </article>
+          ))
+        }
+      </div>
+    </section>
+
+    <section class="section education" aria-labelledby="education-heading">
+      <h2 id="education-heading">Education</h2>
+      <p class="edu-degree">B.S. Mechanical Engineering</p>
+      <p class="edu-detail">
+        University of South Florida — scholarships; self-funded through part-time work.
+      </p>
+    </section>
+  </main>
+  <Footer />
+</BaseLayout>
+
+<style>
+  .page {
+    max-width: 740px;
+    margin: 0 auto;
+    padding: 3rem 1.25rem 1rem;
+  }
+
+  .eyebrow {
+    margin: 0 0 0.65rem;
+    color: var(--muted);
+    font-size: 0.875rem;
+  }
+
+  .hero h1 {
+    margin: 0 0 0.45rem;
+    font-size: clamp(2rem, 5vw, 2.6rem);
+    letter-spacing: -0.035em;
+    line-height: 1.15;
+  }
+
+  .headline {
+    margin: 0 0 0.85rem;
+    color: var(--muted);
+    font-size: 1.05rem;
+  }
+
+  .meta {
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem 0.55rem;
+    color: var(--muted);
+    font-size: 0.925rem;
+  }
+
+  .meta a {
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+
+  .section {
+    margin-top: 2.75rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--border);
+  }
+
+  .section h2 {
+    margin: 0 0 1rem;
+    font-size: 1.15rem;
+    letter-spacing: -0.02em;
+  }
+
+  .summary {
+    margin: 0 0 1rem;
+    color: var(--muted);
+    font-size: 1.05rem;
+    line-height: 1.7;
+  }
+
+  .summary.emphasis {
+    color: var(--text);
+  }
+
+  .comp-grid {
+    display: grid;
+    gap: 1rem;
+  }
+
+  @media (min-width: 700px) {
+    .comp-grid {
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+    }
+  }
+
+  .comp-card {
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 1.1rem 1.15rem;
+    background: transparent;
+  }
+
+  .comp-card h3 {
+    margin: 0 0 0.75rem;
+    font-size: 0.95rem;
+    letter-spacing: -0.01em;
+  }
+
+  .comp-card ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .comp-card li {
+    color: var(--muted);
+    font-size: 0.9rem;
+    line-height: 1.45;
+    padding: 0.28rem 0;
+    border-top: 1px solid var(--border);
+  }
+
+  .comp-card li:first-child {
+    border-top: none;
+    padding-top: 0;
+  }
+
+  .roles {
+    display: flex;
+    flex-direction: column;
+    gap: 1.75rem;
+  }
+
+  .role h3 {
+    margin: 0 0 0.3rem;
+    font-size: 1.05rem;
+    letter-spacing: -0.015em;
+  }
+
+  .role-org {
+    margin: 0 0 0.75rem;
+    color: var(--muted);
+    font-size: 0.925rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.35rem 0.45rem;
+  }
+
+  .role ul {
+    margin: 0;
+    padding-left: 1.15rem;
+  }
+
+  .role li {
+    color: var(--muted);
+    font-size: 0.975rem;
+    line-height: 1.55;
+    margin-bottom: 0.4rem;
+  }
+
+  .role li:last-child {
+    margin-bottom: 0;
+  }
+
+  .edu-degree {
+    margin: 0 0 0.35rem;
+    font-size: 1.05rem;
+    font-weight: 600;
+    letter-spacing: -0.015em;
+  }
+
+  .edu-detail {
+    margin: 0;
+    color: var(--muted);
+    font-size: 0.975rem;
+  }
+</style>
