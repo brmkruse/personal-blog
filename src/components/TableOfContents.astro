@@ -80,7 +80,9 @@ const items = headings.filter((h) => h.depth === 2);
   }
 
   .toc-desktop a:hover,
-  .toc-mobile a:hover {
+  .toc-mobile a:hover,
+  .toc-desktop a:focus-visible,
+  .toc-mobile a:focus-visible {
     color: var(--text);
   }
 
@@ -88,7 +90,7 @@ const items = headings.filter((h) => h.depth === 2);
     position: sticky;
     top: var(--header-h);
     z-index: 40;
-    background: rgba(255, 255, 255, 0.96);
+    background: rgba(10, 10, 10, 0.96);
     border-bottom: 1px solid var(--border);
     padding: 0.65rem 1.25rem;
     margin: 0 -1.25rem 1.5rem;
