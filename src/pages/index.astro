@@ -2,6 +2,48 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
+
+const pills = [
+  { label: 'Full-Cycle Ownership', top: '6%', left: '5%', delay: '0s' },
+  { label: 'Complex Multi-Threaded Deals', top: '10%', left: '52%', delay: '0.3s' },
+  { label: 'CIO / CISO / CTO Engagement', top: '18%', left: '24%', delay: '0.6s' },
+  { label: 'Technical Discovery', top: '5%', left: '32%', delay: '0.9s' },
+  { label: 'Workflow Mapping', top: '14%', left: '72%', delay: '1.2s' },
+  { label: 'POC / POV Project Management', top: '28%', left: '6%', delay: '0.2s' },
+  { label: 'Value', top: '24%', left: '48%', delay: '1.5s' },
+  { label: 'Outcome-Driven ROI', top: '22%', left: '62%', delay: '0.4s' },
+  { label: 'CNAPP', top: '34%', left: '38%', delay: '0.7s' },
+  { label: 'CSPM', top: '32%', left: '78%', delay: '1.1s' },
+  { label: 'CIEM', top: '40%', left: '18%', delay: '1.4s' },
+  { label: 'SIEM', top: '44%', left: '55%', delay: '0.1s' },
+  { label: 'MDR', top: '48%', left: '8%', delay: '0.8s' },
+  { label: 'CTEM', top: '46%', left: '70%', delay: '1.6s' },
+  { label: 'Threat Intelligence', top: '16%', left: '8%', delay: '1.0s' },
+  { label: 'AI/LLM Governance', top: '54%', left: '42%', delay: '0.5s' },
+  { label: 'Frontier LLMs', top: '58%', left: '20%', delay: '1.3s' },
+  { label: 'Agentic Workflows', top: '56%', left: '64%', delay: '0.9s' },
+  { label: 'NIST/ISO/CIS Framework Mapping', top: '66%', left: '46%', delay: '1.7s' },
+  { label: 'New logo land', top: '70%', left: '8%', delay: '0.3s' },
+  { label: 'Customer expansion', top: '68%', left: '78%', delay: '1.1s' },
+  { label: 'Channel / VAR Co-Sell', top: '74%', left: '28%', delay: '0.6s' },
+  { label: 'MEDDPICC', top: '78%', left: '58%', delay: '1.4s' },
+  { label: 'Gong', top: '36%', left: '88%', delay: '0.2s' },
+  { label: 'SFDC', top: '62%', left: '88%', delay: '0.8s' },
+  { label: 'Forecasting', top: '82%', left: '14%', delay: '1.2s' },
+  { label: 'SDLC', top: '84%', left: '42%', delay: '0.4s' },
+  { label: 'Developer workflows', top: '80%', left: '68%', delay: '1.0s' },
+  { label: 'Knowledge worker workflows', top: '88%', left: '32%', delay: '1.5s' },
+  { label: 'Consultative selling', top: '8%', left: '84%', delay: '0.5s' },
+  { label: 'Leadership', top: '50%', left: '30%', delay: '1.8s' },
+  { label: 'Daily AI practitioner', top: '86%', left: '74%', delay: '0.7s' },
+];
+
+const typewriterLines = [
+  "Hi, I'm Brandon",
+  'Technical sales. Cybersecurity & AI.',
+  'Looking for a high-impact AE / Account Director seat.',
+  'Scroll down, or click a skill to explore.',
+];
 ---
 
 <BaseLayout
@@ -9,121 +51,289 @@ import Footer from '../components/Footer.astro';
   description="Technical sales, cybersecurity, and AI. Looking for a high-impact individual contributor role."
 >
   <Header />
-  <main class="page">
-    <section class="intro">
-      <p class="eyebrow">Austin, TX</p>
-      <h1>Technical sales. Cybersecurity &amp; AI. Girl dad.</h1>
-      <p class="lede">
-        Experience in complex software GTM roles as both an Account Executive and Sales Leader. Cybersecurity, AI and longevity health nerd.
-      </p>
+  <main>
+    <section class="hero" aria-label="Expertise">
+      <div class="pill-field">
+        {
+          pills.map((pill) => (
+            <a
+              class="pill"
+              href="/professional"
+              style={`top:${pill.top};left:${pill.left};animation-delay:${pill.delay}`}
+            >
+              {pill.label}
+            </a>
+          ))
+        }
+      </div>
+      <div class="hero-copy">
+        <p class="typewriter" data-lines={JSON.stringify(typewriterLines)}>
+          <span class="typewriter-text"></span><span class="caret" aria-hidden="true">|</span>
+        </p>
+      </div>
     </section>
 
-    <section class="cards" aria-label="Site sections">
-      <a class="card" href="/professional">
-        <span class="card-label">Professional</span>
-        <h2>Experience &amp; competencies</h2>
+    <section class="intro-wrap" aria-label="Introduction">
+      <div class="intro-card">
+        <h1>Hello!</h1>
         <p>
-          Previously Rapid7 and Box. Looking to return to a high-impact individual contributor role AE / Account Director seat at an AI-native or cyber company.
+          Experienced seller in both Account Executive (AE) and sales leadership roles. Previously
+          Rapid7, Commerce, and Box. Looking to return to a high-impact individual contributor
+          AE / Account Director seat at an AI-native or cyber company.
         </p>
-        <span class="card-cta">View professional →</span>
-      </a>
-
-      <a class="card" href="/writing">
-        <span class="card-label">Interests</span>
-        <h2>Notes on learning &amp; building</h2>
         <p>
-          Essays and field notes on AI, cybersecurity, and longevity health.
+          Cybersecurity, AI, and longevity health nerd based in Austin, TX. Thank you for checking
+          out my website!
         </p>
-        <span class="card-cta">Browse interests →</span>
-      </a>
+        <div class="intro-actions">
+          <a class="btn" href="/professional">Professional</a>
+          <a class="text-link" href="/writing">Interests</a>
+        </div>
+      </div>
     </section>
   </main>
   <Footer />
 </BaseLayout>
 
+<script>
+  const root = document.querySelector('.typewriter');
+  const textEl = document.querySelector('.typewriter-text');
+  if (root instanceof HTMLElement && textEl instanceof HTMLElement) {
+    const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const raw = root.dataset.lines ?? '[]';
+    let lines = [];
+    try {
+      lines = JSON.parse(raw);
+    } catch {
+      lines = ["Hi, I'm Brandon"];
+    }
+
+    if (reduce || lines.length === 0) {
+      textEl.textContent = lines[0] ?? '';
+      const caret = root.querySelector('.caret');
+      if (caret) caret.remove();
+    } else {
+      let lineIndex = 0;
+      let charIndex = 0;
+      let deleting = false;
+
+      const tick = () => {
+        const line = lines[lineIndex] ?? '';
+        if (!deleting) {
+          charIndex += 1;
+          textEl.textContent = line.slice(0, charIndex);
+          if (charIndex >= line.length) {
+            deleting = true;
+            window.setTimeout(tick, 1800);
+            return;
+          }
+          window.setTimeout(tick, 42);
+        } else {
+          charIndex -= 1;
+          textEl.textContent = line.slice(0, Math.max(0, charIndex));
+          if (charIndex <= 0) {
+            deleting = false;
+            lineIndex = (lineIndex + 1) % lines.length;
+            window.setTimeout(tick, 320);
+            return;
+          }
+          window.setTimeout(tick, 24);
+        }
+      };
+
+      tick();
+    }
+  }
+</script>
+
 <style>
-  .page {
-    max-width: 720px;
-    margin: 0 auto;
-    padding: 3rem 1.25rem 1rem;
+  .hero {
+    position: relative;
+    min-height: min(78vh, 720px);
+    overflow: hidden;
+    background:
+      radial-gradient(ellipse at 50% 30%, rgba(56, 132, 255, 0.18), transparent 55%),
+      linear-gradient(180deg, #0c1422 0%, #0a0a0a 100%);
+    border-bottom: 1px solid var(--border);
   }
 
-  .eyebrow {
-    margin: 0 0 0.75rem;
-    color: var(--muted);
-    font-size: 0.875rem;
+  .pill-field {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
   }
 
-  h1 {
-    margin: 0 0 1rem;
-    font-size: clamp(2rem, 5vw, 2.75rem);
-    line-height: 1.15;
-    letter-spacing: -0.035em;
+  .pill {
+    position: absolute;
+    pointer-events: auto;
+    max-width: min(42vw, 260px);
+    padding: 0.35rem 0.7rem;
+    border: 1px solid rgba(110, 168, 255, 0.55);
+    border-radius: 999px;
+    background: rgba(12, 20, 34, 0.72);
+    color: #9ec1ff;
+    font-size: clamp(0.58rem, 1.4vw, 0.72rem);
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    text-decoration: none;
+    line-height: 1.25;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    animation: drift 9s ease-in-out infinite alternate;
+    backdrop-filter: blur(4px);
   }
 
-  .lede {
-    margin: 0;
-    color: var(--muted);
-    font-size: 1.1rem;
-    max-width: 38rem;
+  .pill:hover {
+    color: #e8f1ff;
+    border-color: #8bb6ff;
+    background: rgba(30, 52, 88, 0.9);
+    text-decoration: none;
   }
 
-  .cards {
-    margin-top: 3rem;
+  .hero-copy {
+    position: relative;
+    z-index: 1;
+    min-height: inherit;
     display: grid;
+    place-items: center;
+    padding: 2rem 1.25rem;
+    text-align: center;
+  }
+
+  .typewriter {
+    margin: 0;
+    max-width: min(92vw, 22rem);
+    font-size: clamp(1.45rem, 4.5vw, 2.35rem);
+    font-weight: 700;
+    letter-spacing: -0.035em;
+    line-height: 1.25;
+    background: linear-gradient(90deg, #6eb0ff 0%, #f2f2f2 55%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  .typewriter-text {
+    white-space: pre-wrap;
+  }
+
+  .caret {
+    display: inline-block;
+    margin-left: 0.05em;
+    color: #6eb0ff;
+    -webkit-text-fill-color: #6eb0ff;
+    animation: blink 1s steps(1) infinite;
+  }
+
+  .intro-wrap {
+    padding: 3.5rem 1.25rem 1rem;
+    background:
+      radial-gradient(circle at 20% 20%, rgba(56, 132, 255, 0.06), transparent 40%),
+      radial-gradient(circle at 80% 70%, rgba(56, 132, 255, 0.05), transparent 35%);
+  }
+
+  .intro-card {
+    max-width: 560px;
+    margin: 0 auto;
+    padding: 2rem 1.6rem;
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    background: linear-gradient(180deg, #121216 0%, #0e0e11 100%);
+    box-shadow: 0 18px 50px rgba(0, 0, 0, 0.35);
+    border-left: 3px solid #3d8b6e;
+    border-right: 3px solid #3b82f6;
+  }
+
+  .intro-card h1 {
+    margin: 0 0 1rem;
+    font-size: clamp(1.8rem, 4vw, 2.3rem);
+    letter-spacing: -0.03em;
+  }
+
+  .intro-card p {
+    margin: 0 0 1rem;
+    color: var(--muted);
+    font-size: 1.05rem;
+    line-height: 1.65;
+  }
+
+  .intro-card p:last-of-type {
+    margin-bottom: 1.5rem;
+  }
+
+  .intro-actions {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
     gap: 1rem;
   }
 
-  @media (min-width: 640px) {
-    .cards {
-      grid-template-columns: 1fr 1fr;
-      gap: 1.25rem;
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.55rem 1rem;
+    border: 1px solid rgba(110, 168, 255, 0.7);
+    border-radius: 999px;
+    color: #cfe0ff;
+    font-size: 0.9rem;
+    font-weight: 600;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    text-decoration: none;
+  }
+
+  .btn:hover {
+    background: rgba(59, 130, 246, 0.15);
+    text-decoration: none;
+  }
+
+  .text-link {
+    color: var(--muted);
+    font-size: 0.95rem;
+  }
+
+  @keyframes drift {
+    from {
+      transform: translate3d(0, 0, 0);
+    }
+    to {
+      transform: translate3d(0, -10px, 0);
     }
   }
 
-  .card {
-    display: flex;
-    flex-direction: column;
-    gap: 0.55rem;
-    padding: 1.35rem 1.25rem;
-    border: 1px solid var(--border);
-    border-radius: 12px;
-    background: transparent;
-    text-decoration: none;
-    transition: background 0.15s ease, border-color 0.15s ease;
+  @keyframes blink {
+    0%,
+    45% {
+      opacity: 1;
+    }
+    50%,
+    100% {
+      opacity: 0;
+    }
   }
 
-  .card:hover {
-    background: var(--hover);
-    border-color: #3a3a40;
-    text-decoration: none;
+  @media (prefers-reduced-motion: reduce) {
+    .pill {
+      animation: none;
+    }
+
+    .caret {
+      animation: none;
+    }
   }
 
-  .card-label {
-    color: var(--muted);
-    font-size: 0.8rem;
-    letter-spacing: 0.04em;
-    text-transform: uppercase;
-  }
+  @media (max-width: 700px) {
+    .hero {
+      min-height: 620px;
+    }
 
-  .card h2 {
-    margin: 0;
-    font-size: 1.2rem;
-    letter-spacing: -0.02em;
-    line-height: 1.3;
-  }
-
-  .card p {
-    margin: 0;
-    color: var(--muted);
-    font-size: 0.95rem;
-    line-height: 1.55;
-    flex: 1;
-  }
-
-  .card-cta {
-    margin-top: 0.35rem;
-    font-size: 0.9rem;
-    font-weight: 500;
+    .pill {
+      max-width: 46vw;
+      font-size: 0.55rem;
+      padding: 0.28rem 0.55rem;
+    }
   }
 </style>
