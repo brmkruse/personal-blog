@@ -27,6 +27,8 @@ const canonicalURL = canonical
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="apple-touch-icon" href="/favicon.svg" />
+    <meta name="theme-color" content="#0a0a0a" />
     <link rel="sitemap" href="/sitemap-index.xml" />
     <title>{siteTitle}</title>
     <meta name="description" content={description} />
@@ -35,10 +37,12 @@ const canonicalURL = canonical
     <meta property="og:title" content={siteTitle} />
     <meta property="og:description" content={description} />
     <meta property="og:url" content={canonicalURL} />
-    <meta property="og:site_name" content="Kruse" />
+    <meta property="og:site_name" content="XKruse" />
+    <meta property="og:image" content={new URL('/favicon.svg', Astro.site).toString()} />
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:title" content={siteTitle} />
     <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={new URL('/favicon.svg', Astro.site).toString()} />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
