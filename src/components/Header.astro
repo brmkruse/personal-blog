@@ -1,4 +1,12 @@
 ---
+const pathname = Astro.url.pathname.replace(/\/$/, '') || '/';
+
+const links = [
+  { href: '/', label: 'XKruse' },
+  { href: '/professional', label: 'Experience' },
+  { href: '/writing', label: 'Interests' },
+] as const;
+
 const socials = [
   {
     label: 'X',
@@ -16,11 +24,28 @@ const socials = [
     icon: 'github',
   },
 ] as const;
+
+function isActive(href: string) {
+  if (href === '/') return pathname === '/';
+  return pathname === href || pathname.startsWith(`${href}/`);
+}
 ---
 
 <header class="site-header">
   <div class="header-inner">
-    <a class="logo" href="/">XKruse</a>
+    <nav class="primary-nav" aria-label="Primary">
+      {
+        links.map((link) => (
+          <a
+            href={link.href}
+            class:list={['nav-link', { active: isActive(link.href) }]}
+            aria-current={isActive(link.href) ? 'page' : undefined}
+          >
+            {link.label}
+          </a>
+        ))
+      }
+    </nav>
     <p class="wordmark">Brandon Kruse</p>
     <nav class="socials" aria-label="Social links">
       {
@@ -85,16 +110,29 @@ const socials = [
     gap: 0.75rem;
   }
 
-  .logo {
+  .primary-nav {
     justify-self: start;
-    font-weight: 700;
-    font-size: 1.05rem;
-    letter-spacing: -0.02em;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.15rem 0.85rem;
+  }
+
+  .nav-link {
+    color: var(--text);
+    font-size: 0.875rem;
+    font-weight: 400;
+    letter-spacing: normal;
     text-decoration: none;
   }
 
-  .logo:hover {
+  .nav-link:hover {
+    color: var(--muted);
     text-decoration: none;
+  }
+
+  .nav-link.active {
+    color: var(--muted);
   }
 
   .wordmark {
@@ -130,7 +168,15 @@ const socials = [
     text-decoration: none;
   }
 
-  @media (max-width: 520px) {
+  @media (max-width: 640px) {
+    .primary-nav {
+      gap: 0.1rem 0.55rem;
+    }
+
+    .nav-link {
+      font-size: 0.8rem;
+    }
+
     .wordmark {
       font-size: 0.95rem;
     }
