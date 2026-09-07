@@ -36,7 +36,7 @@ const typewriterLines = [
   <Header />
   <main>
     <section class="hero" aria-label="Expertise">
-      <div class="pill-field" aria-hidden="true">
+      <div class="pill-field">
         {
           pills.map((pill) => (
             <a
@@ -80,7 +80,7 @@ const typewriterLines = [
   if (root instanceof HTMLElement && textEl instanceof HTMLElement) {
     const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     const raw = root.dataset.lines ?? '[]';
-    let lines: string[] = [];
+    let lines = [];
     try {
       lines = JSON.parse(raw);
     } catch {
@@ -183,11 +183,11 @@ const typewriterLines = [
 
   .typewriter {
     margin: 0;
-    max-width: 18ch;
-    font-size: clamp(1.65rem, 5vw, 2.6rem);
+    max-width: min(92vw, 22rem);
+    font-size: clamp(1.45rem, 4.5vw, 2.35rem);
     font-weight: 700;
     letter-spacing: -0.035em;
-    line-height: 1.2;
+    line-height: 1.25;
     background: linear-gradient(90deg, #6eb0ff 0%, #f2f2f2 55%);
     -webkit-background-clip: text;
     background-clip: text;
@@ -309,10 +309,6 @@ const typewriterLines = [
       max-width: 46vw;
       font-size: 0.55rem;
       padding: 0.28rem 0.55rem;
-    }
-
-    .typewriter {
-      max-width: 14ch;
     }
   }
 </style>
