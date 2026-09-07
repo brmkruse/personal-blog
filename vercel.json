@@ -1,0 +1,19 @@
+{
+  "redirects": [
+    {
+      "source": "/professional",
+      "destination": "/xp",
+      "permanent": true
+    },
+    {
+      "source": "/writing",
+      "destination": "/interests",
+      "permanent": true
+    },
+    {
+      "source": "/writing/:path*",
+      "destination": "/interests/:path*",
+      "permanent": true
+    }
+  ]
+}
