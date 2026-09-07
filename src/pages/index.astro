@@ -5,44 +5,37 @@ import Footer from '../components/Footer.astro';
 
 const pills = [
   { label: 'Full-Cycle Ownership', top: '6%', left: '5%', delay: '0s' },
-  { label: 'Complex Multi-Threaded Deals', top: '10%', left: '52%', delay: '0.3s' },
-  { label: 'CIO / CISO / CTO Engagement', top: '18%', left: '24%', delay: '0.6s' },
-  { label: 'Technical Discovery', top: '5%', left: '32%', delay: '0.9s' },
-  { label: 'Workflow Mapping', top: '14%', left: '72%', delay: '1.2s' },
-  { label: 'POC / POV Project Management', top: '28%', left: '6%', delay: '0.2s' },
-  { label: 'Value', top: '24%', left: '48%', delay: '1.5s' },
-  { label: 'Outcome-Driven ROI', top: '22%', left: '62%', delay: '0.4s' },
-  { label: 'CNAPP', top: '34%', left: '38%', delay: '0.7s' },
-  { label: 'CSPM', top: '32%', left: '78%', delay: '1.1s' },
-  { label: 'CIEM', top: '40%', left: '18%', delay: '1.4s' },
-  { label: 'SIEM', top: '44%', left: '55%', delay: '0.1s' },
+  { label: 'Complex Multi-Threaded Deals', top: '10%', left: '58%', delay: '0.3s' },
+  { label: 'CIO / CISO / CTO Engagement', top: '18%', left: '12%', delay: '0.6s' },
+  { label: 'Technical Discovery', top: '5%', left: '28%', delay: '0.9s' },
+  { label: 'Workflow Mapping', top: '14%', left: '78%', delay: '1.2s' },
+  { label: 'POC / POV Project Management', top: '28%', left: '4%', delay: '0.2s' },
+  { label: 'Value', top: '20%', left: '88%', delay: '1.5s' },
+  { label: 'Outcome-Driven ROI', top: '26%', left: '68%', delay: '0.4s' },
+  { label: 'CNAPP', top: '34%', left: '10%', delay: '0.7s' },
+  { label: 'CSPM', top: '32%', left: '82%', delay: '1.1s' },
+  { label: 'CIEM', top: '40%', left: '6%', delay: '1.4s' },
+  { label: 'SIEM', top: '38%', left: '90%', delay: '0.1s' },
   { label: 'MDR', top: '48%', left: '8%', delay: '0.8s' },
-  { label: 'CTEM', top: '46%', left: '70%', delay: '1.6s' },
-  { label: 'Threat Intelligence', top: '16%', left: '8%', delay: '1.0s' },
-  { label: 'AI/LLM Governance', top: '54%', left: '42%', delay: '0.5s' },
-  { label: 'Frontier LLMs', top: '58%', left: '20%', delay: '1.3s' },
-  { label: 'Agentic Workflows', top: '56%', left: '64%', delay: '0.9s' },
-  { label: 'NIST/ISO/CIS Framework Mapping', top: '66%', left: '46%', delay: '1.7s' },
-  { label: 'New logo land', top: '70%', left: '8%', delay: '0.3s' },
-  { label: 'Customer expansion', top: '68%', left: '78%', delay: '1.1s' },
-  { label: 'Channel / VAR Co-Sell', top: '74%', left: '28%', delay: '0.6s' },
-  { label: 'MEDDPICC', top: '78%', left: '58%', delay: '1.4s' },
-  { label: 'Gong', top: '36%', left: '88%', delay: '0.2s' },
-  { label: 'SFDC', top: '62%', left: '88%', delay: '0.8s' },
-  { label: 'Forecasting', top: '82%', left: '14%', delay: '1.2s' },
-  { label: 'SDLC', top: '84%', left: '42%', delay: '0.4s' },
-  { label: 'Developer workflows', top: '80%', left: '68%', delay: '1.0s' },
-  { label: 'Knowledge worker workflows', top: '88%', left: '32%', delay: '1.5s' },
+  { label: 'CTEM', top: '46%', left: '76%', delay: '1.6s' },
+  { label: 'Threat Intelligence', top: '16%', left: '2%', delay: '1.0s' },
+  { label: 'AI/LLM Governance', top: '58%', left: '8%', delay: '0.5s' },
+  { label: 'Frontier LLMs', top: '62%', left: '18%', delay: '1.3s' },
+  { label: 'Agentic Workflows', top: '56%', left: '72%', delay: '0.9s' },
+  { label: 'NIST/ISO/CIS Framework Mapping', top: '68%', left: '42%', delay: '1.7s' },
+  { label: 'New logo land', top: '72%', left: '6%', delay: '0.3s' },
+  { label: 'Customer expansion', top: '70%', left: '78%', delay: '1.1s' },
+  { label: 'Channel / VAR Co-Sell', top: '76%', left: '24%', delay: '0.6s' },
+  { label: 'MEDDPICC', top: '80%', left: '58%', delay: '1.4s' },
+  { label: 'Gong', top: '36%', left: '72%', delay: '0.2s' },
+  { label: 'SFDC', top: '64%', left: '88%', delay: '0.8s' },
+  { label: 'Forecasting', top: '84%', left: '12%', delay: '1.2s' },
+  { label: 'SDLC', top: '86%', left: '42%', delay: '0.4s' },
+  { label: 'Developer workflows', top: '82%', left: '70%', delay: '1.0s' },
+  { label: 'Knowledge worker workflows', top: '90%', left: '28%', delay: '1.5s' },
   { label: 'Consultative selling', top: '8%', left: '84%', delay: '0.5s' },
-  { label: 'Leadership', top: '50%', left: '30%', delay: '1.8s' },
-  { label: 'Daily AI practitioner', top: '86%', left: '74%', delay: '0.7s' },
-];
-
-const typewriterLines = [
-  "Hi, I'm Brandon",
-  'Technical sales. Cybersecurity & AI.',
-  'Looking for a high-impact AE / Account Director seat.',
-  'Scroll down, or click a skill to explore.',
+  { label: 'Leadership', top: '52%', left: '88%', delay: '1.8s' },
+  { label: 'Daily AI practitioner', top: '88%', left: '74%', delay: '0.7s' },
 ];
 ---
 
@@ -67,7 +60,7 @@ const typewriterLines = [
         }
       </div>
       <div class="hero-copy">
-        <p class="typewriter" data-lines={JSON.stringify(typewriterLines)}>
+        <p class="typewriter">
           <span class="typewriter-text"></span><span class="caret" aria-hidden="true">|</span>
         </p>
       </div>
@@ -100,15 +93,13 @@ const typewriterLines = [
   const textEl = document.querySelector('.typewriter-text');
   if (root instanceof HTMLElement && textEl instanceof HTMLElement) {
     const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    const raw = root.dataset.lines ?? '[]';
-    let lines = [];
-    try {
-      lines = JSON.parse(raw);
-    } catch {
-      lines = ["Hi, I'm Brandon"];
-    }
+    const lines = [
+      "Hi, I'm Brandon",
+      'Technical sales. Cybersecurity & AI.',
+      'Looking for a high-impact AE / Account Director seat.',
+    ];
 
-    if (reduce || lines.length === 0) {
+    if (reduce) {
       textEl.textContent = lines[0] ?? '';
       const caret = root.querySelector('.caret');
       if (caret) caret.remove();
@@ -160,6 +151,7 @@ const typewriterLines = [
   .pill-field {
     position: absolute;
     inset: 0;
+    z-index: 0;
     pointer-events: none;
   }
 
@@ -194,29 +186,43 @@ const typewriterLines = [
 
   .hero-copy {
     position: relative;
-    z-index: 1;
+    z-index: 2;
     min-height: inherit;
     display: grid;
     place-items: center;
     padding: 2rem 1.25rem;
     text-align: center;
+    pointer-events: none;
   }
 
   .typewriter {
     margin: 0;
-    max-width: min(92vw, 22rem);
+    max-width: min(92vw, 28rem);
+    padding: 0.85rem 1.1rem;
+    border-radius: 12px;
+    background: rgba(10, 14, 22, 0.72);
+    backdrop-filter: blur(8px);
     font-size: clamp(1.45rem, 4.5vw, 2.35rem);
     font-weight: 700;
     letter-spacing: -0.035em;
     line-height: 1.25;
-    background: linear-gradient(90deg, #6eb0ff 0%, #f2f2f2 55%);
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
+    color: #e8f1ff;
   }
 
   .typewriter-text {
     white-space: pre-wrap;
+    background: linear-gradient(90deg, #6eb0ff 0%, #f2f2f2 70%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: #e8f1ff;
+    -webkit-text-fill-color: transparent;
+  }
+
+  @supports not (background-clip: text) {
+    .typewriter-text {
+      color: #e8f1ff;
+      -webkit-text-fill-color: #e8f1ff;
+    }
   }
 
   .caret {
