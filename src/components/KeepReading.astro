@@ -15,7 +15,7 @@ const { posts } = Astro.props;
       <div class="grid">
         {
           posts.map((post) => (
-            <a class="card" href={`/writing/${post.id}`}>
+            <a class="card" href={`/interests/${post.id}`}>
               <span class="meta">{post.data.category}</span>
               <span class="title">{post.data.title}</span>
               <span class="excerpt">{post.data.description}</span>
