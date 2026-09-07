@@ -4,56 +4,67 @@ import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 
 const pills = [
-  // top band
-  { label: 'Technical Discovery', top: 4, left: 6 },
-  { label: 'Full-Cycle Ownership', top: 5, left: 28 },
-  { label: 'Consultative selling', top: 4, left: 52 },
-  { label: 'Complex Multi-Threaded Deals', top: 6, left: 72 },
-  { label: 'Hiring', top: 8, left: 90 },
-  // upper band
-  { label: 'Threat Intelligence', top: 14, left: 2 },
-  { label: 'CIO / CISO / CTO Engagement', top: 15, left: 18 },
-  { label: 'Workflow Mapping', top: 13, left: 78 },
-  { label: 'Negotiation', top: 16, left: 92 },
+  // top
+  { label: 'Technical Discovery', top: 3, left: 4 },
+  { label: 'Full-Cycle Ownership', top: 4, left: 24 },
+  { label: 'Consultative selling', top: 3, left: 48 },
+  { label: 'Hiring', top: 5, left: 70 },
+  { label: 'Prospecting', top: 4, left: 88 },
+  // upper
+  { label: 'Threat Intelligence', top: 11, left: 2 },
+  { label: 'CIO / CISO / CTO Engagement', top: 12, left: 16 },
+  { label: 'Workflow Mapping', top: 10, left: 58 },
+  { label: 'Negotiation', top: 11, left: 78 },
+  { label: 'Account Planning', top: 13, left: 90 },
   // upper-mid sides
-  { label: 'POC / POV Project Management', top: 24, left: 3 },
-  { label: 'Solution selling', top: 22, left: 88 },
-  { label: 'CNAPP', top: 30, left: 5 },
-  { label: 'Outcome-Driven ROI', top: 28, left: 78 },
-  { label: 'CSPM', top: 29, left: 92 },
-  { label: 'Commerce', top: 34, left: 16 },
-  { label: 'Gong', top: 33, left: 70 },
-  // mid sides
-  { label: 'CIEM', top: 40, left: 4 },
-  { label: 'SIEM', top: 38, left: 90 },
-  { label: 'Platform', top: 44, left: 8 },
-  { label: 'API', top: 42, left: 82 },
-  { label: 'MDR', top: 48, left: 3 },
-  { label: 'CTEM', top: 46, left: 74 },
-  { label: 'Leadership', top: 50, left: 88 },
-  { label: 'Infrastructure', top: 52, left: 10 },
-  { label: 'Deployment', top: 54, left: 78 },
+  { label: 'POC / POV Project Management', top: 20, left: 2 },
+  { label: 'Solution selling', top: 19, left: 86 },
+  { label: 'Application security', top: 22, left: 70 },
+  { label: 'CNAPP', top: 26, left: 5 },
+  { label: 'Outcome-Driven ROI', top: 25, left: 78 },
+  { label: 'CSPM', top: 26, left: 92 },
+  { label: 'Commerce', top: 30, left: 14 },
+  { label: 'Gong', top: 29, left: 68 },
+  { label: 'Multi-threading', top: 31, left: 84 },
+  // mid sides — keep center clear for typewriter
+  { label: 'CIEM', top: 36, left: 3 },
+  { label: 'SIEM', top: 35, left: 90 },
+  { label: 'Platform', top: 40, left: 7 },
+  { label: 'API', top: 39, left: 82 },
+  { label: 'MDR', top: 44, left: 2 },
+  { label: 'CTEM', top: 43, left: 74 },
+  { label: 'Leadership', top: 45, left: 88 },
+  { label: 'Enterprise', top: 48, left: 10 },
+  { label: 'Infrastructure', top: 50, left: 78 },
+  { label: 'Mid-market', top: 52, left: 4 },
+  { label: 'Deployment', top: 52, left: 90 },
   // lower-mid
-  { label: 'AI/LLM Governance', top: 58, left: 5 },
-  { label: 'Agentic Workflows', top: 56, left: 68 },
-  { label: 'Frontier LLMs', top: 62, left: 16 },
-  { label: 'SFDC', top: 60, left: 88 },
-  { label: 'Agent harness', top: 64, left: 6 },
-  { label: 'Integrations', top: 63, left: 74 },
-  // lower band
-  { label: 'NIST/ISO/CIS Framework Mapping', top: 68, left: 28 },
-  { label: 'Enterprise Content Management', top: 70, left: 54 },
-  { label: 'New logo land', top: 72, left: 4 },
-  { label: 'Customer expansion', top: 71, left: 80 },
-  { label: 'Channel / VAR Co-Sell', top: 76, left: 18 },
-  { label: 'Pipeline Generation', top: 75, left: 48 },
-  { label: 'MEDDPICC', top: 78, left: 66 },
-  // bottom band
-  { label: 'Forecasting', top: 84, left: 6 },
-  { label: 'SDLC', top: 83, left: 28 },
-  { label: 'Developer workflows', top: 82, left: 48 },
-  { label: 'Knowledge worker workflows', top: 86, left: 68 },
-  { label: 'Daily AI practitioner', top: 90, left: 22 },
+  { label: 'AI/LLM Governance', top: 56, left: 6 },
+  { label: 'Agentic Workflows', top: 55, left: 68 },
+  { label: 'Startups', top: 58, left: 84 },
+  { label: 'Frontier LLMs', top: 60, left: 16 },
+  { label: 'SFDC', top: 59, left: 90 },
+  { label: 'Agent harness', top: 62, left: 4 },
+  { label: 'Integrations', top: 61, left: 74 },
+  { label: 'Engineering', top: 64, left: 88 },
+  // lower
+  { label: 'NIST/ISO/CIS Framework Mapping', top: 66, left: 24 },
+  { label: 'Enterprise Content Management', top: 68, left: 50 },
+  { label: 'New logo land', top: 70, left: 3 },
+  { label: 'Customer expansion', top: 69, left: 78 },
+  { label: 'Feedback loops', top: 72, left: 64 },
+  { label: 'Channel / VAR Co-Sell', top: 74, left: 16 },
+  { label: 'Pipeline Generation', top: 73, left: 42 },
+  { label: 'MEDDPICC', top: 76, left: 70 },
+  { label: 'Achiever', top: 75, left: 88 },
+  // bottom
+  { label: 'Forecasting', top: 82, left: 5 },
+  { label: 'SDLC', top: 81, left: 24 },
+  { label: 'Developer workflows', top: 80, left: 44 },
+  { label: 'Knowledge worker workflows', top: 84, left: 64 },
+  { label: 'Reformer', top: 83, left: 86 },
+  { label: 'Daily AI practitioner', top: 88, left: 18 },
+  { label: 'Builder', top: 90, left: 48 },
 ];
 ---
 
@@ -95,11 +106,12 @@ const pills = [
           AE / Account Director seat at an AI-native or cyber company.
         </p>
         <p>
-          I built this website as my first project using cloud agents. Thank you for checking it
-          out!
+          I built this website as my first project using cloud agents. Click on a skill or
+          competency above to see my professional experience (XP).
         </p>
+        <p>Thank you for checking it out!</p>
         <div class="intro-actions">
-          <a class="btn" href="/professional">Professional</a>
+          <a class="btn" href="/professional">XP</a>
           <a class="text-link" href="/writing">Interests</a>
         </div>
       </div>
@@ -246,7 +258,7 @@ const pills = [
 <style>
   .hero {
     position: relative;
-    min-height: min(78vh, 720px);
+    min-height: min(82vh, 760px);
     overflow: hidden;
     background:
       radial-gradient(ellipse at 50% 30%, rgba(56, 132, 255, 0.18), transparent 55%),
@@ -270,7 +282,7 @@ const pills = [
     border-radius: 999px;
     background: rgba(12, 20, 34, 0.72);
     color: #9ec1ff;
-    font-size: clamp(0.58rem, 1.4vw, 0.72rem);
+    font-size: clamp(0.55rem, 1.3vw, 0.7rem);
     font-weight: 600;
     letter-spacing: 0.04em;
     text-transform: uppercase;
@@ -416,13 +428,13 @@ const pills = [
 
   @media (max-width: 700px) {
     .hero {
-      min-height: 620px;
+      min-height: 640px;
     }
 
     .pill {
       max-width: 46vw;
-      font-size: 0.55rem;
-      padding: 0.28rem 0.55rem;
+      font-size: 0.52rem;
+      padding: 0.26rem 0.5rem;
     }
   }
 </style>
