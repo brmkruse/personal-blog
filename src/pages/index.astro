@@ -23,8 +23,8 @@ const pills = [
   { label: 'Frontier LLMs', top: '58%', left: '20%', delay: '1.3s' },
   { label: 'Agentic Workflows', top: '56%', left: '64%', delay: '0.9s' },
   { label: 'NIST/ISO/CIS Framework Mapping', top: '66%', left: '46%', delay: '1.7s' },
-  { label: 'New Logo', top: '70%', left: '8%', delay: '0.3s' },
-  { label: 'Expansion', top: '68%', left: '78%', delay: '1.1s' },
+  { label: 'New logo land', top: '70%', left: '8%', delay: '0.3s' },
+  { label: 'Customer expansion', top: '68%', left: '78%', delay: '1.1s' },
   { label: 'Channel / VAR Co-Sell', top: '74%', left: '28%', delay: '0.6s' },
   { label: 'MEDDPICC', top: '78%', left: '58%', delay: '1.4s' },
   { label: 'Gong', top: '36%', left: '88%', delay: '0.2s' },
@@ -33,6 +33,9 @@ const pills = [
   { label: 'SDLC', top: '84%', left: '42%', delay: '0.4s' },
   { label: 'Developer workflows', top: '80%', left: '68%', delay: '1.0s' },
   { label: 'Knowledge worker workflows', top: '88%', left: '32%', delay: '1.5s' },
+  { label: 'Consultative selling', top: '8%', left: '84%', delay: '0.5s' },
+  { label: 'Leadership', top: '50%', left: '30%', delay: '1.8s' },
+  { label: 'Daily AI practitioner', top: '86%', left: '74%', delay: '0.7s' },
 ];
 
 const typewriterLines = [
@@ -74,9 +77,13 @@ const typewriterLines = [
       <div class="intro-card">
         <h1>Hello!</h1>
         <p>
-          Previously Rapid7 and Box. Looking to return to a high-impact individual contributor
-          AE / Account Director seat at an AI-native or cyber company. Cybersecurity, AI, and
-          longevity health nerd based in Austin, TX.
+          Experienced seller in both Account Executive (AE) and sales leadership roles. Previously
+          Rapid7, Commerce, and Box. Looking to return to a high-impact individual contributor
+          AE / Account Director seat at an AI-native or cyber company.
+        </p>
+        <p>
+          Cybersecurity, AI, and longevity health nerd based in Austin, TX. Thank you for checking
+          out my website!
         </p>
         <div class="intro-actions">
           <a class="btn" href="/professional">Professional</a>
@@ -246,10 +253,14 @@ const typewriterLines = [
   }
 
   .intro-card p {
-    margin: 0 0 1.5rem;
+    margin: 0 0 1rem;
     color: var(--muted);
     font-size: 1.05rem;
     line-height: 1.65;
+  }
+
+  .intro-card p:last-of-type {
+    margin-bottom: 1.5rem;
   }
 
   .intro-actions {
