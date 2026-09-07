@@ -2,35 +2,42 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
-import PostCard from '../components/PostCard.astro';
-import { getCollection } from 'astro:content';
-
-const posts = (await getCollection('blog', ({ data }) => !data.draft)).sort(
-  (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
-);
 ---
 
-<BaseLayout title="Kruse" description="Notes on learning to code, building small things, and figuring it out as I go.">
+<BaseLayout
+  title="Kruse"
+  description="Professional background in technical sales, cybersecurity, and AI — plus writing about learning to build."
+>
   <Header />
   <main class="page">
     <section class="intro">
-      <p class="eyebrow">Personal blog</p>
-      <h1>Learning to code by building real things.</h1>
+      <p class="eyebrow">Brandon M. Kruse</p>
+      <h1>Technical sales. Cybersecurity &amp; AI. Learning in public.</h1>
       <p class="lede">
-        Hi, I'm Kruse — a coding beginner writing about what I'm learning, what broke,
-        and what finally made sense. Expect honest notes, small projects, and a lot of
-        "wait, why does this work now?"
+        Consultative seller comfortable taking technical products and services to market —
+        and a beginner builder documenting the craft of shipping software.
       </p>
     </section>
 
-    <section class="posts" aria-labelledby="latest-writing">
-      <div class="section-head">
-        <h2 id="latest-writing">Latest writing</h2>
-        <a class="all-link" href="/writing">View all</a>
-      </div>
-      <div class="list">
-        {posts.map((post) => <PostCard post={post} />)}
-      </div>
+    <section class="cards" aria-label="Site sections">
+      <a class="card" href="/professional">
+        <span class="card-label">Professional</span>
+        <h2>Experience &amp; competencies</h2>
+        <p>
+          Account executive background across cybersecurity, cloud, and commerce platforms —
+          mid-market and enterprise cycles, channel, and cross-functional close.
+        </p>
+        <span class="card-cta">View professional →</span>
+      </a>
+
+      <a class="card" href="/writing">
+        <span class="card-label">Writing</span>
+        <h2>Notes on learning &amp; building</h2>
+        <p>
+          Essays and field notes on coding, small projects, and figuring things out as I go.
+        </p>
+        <span class="card-cta">Read writing →</span>
+      </a>
     </section>
   </main>
   <Footer />
@@ -63,26 +70,62 @@ const posts = (await getCollection('blog', ({ data }) => !data.draft)).sort(
     max-width: 38rem;
   }
 
-  .posts {
-    margin-top: 3.5rem;
-  }
-
-  .section-head {
-    display: flex;
-    align-items: baseline;
-    justify-content: space-between;
+  .cards {
+    margin-top: 3rem;
+    display: grid;
     gap: 1rem;
-    margin-bottom: 0.5rem;
   }
 
-  .section-head h2 {
-    margin: 0;
-    font-size: 1.1rem;
-    letter-spacing: -0.02em;
+  @media (min-width: 640px) {
+    .cards {
+      grid-template-columns: 1fr 1fr;
+      gap: 1.25rem;
+    }
   }
 
-  .all-link {
+  .card {
+    display: flex;
+    flex-direction: column;
+    gap: 0.55rem;
+    padding: 1.35rem 1.25rem;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    background: transparent;
+    text-decoration: none;
+    transition: background 0.15s ease, border-color 0.15s ease;
+  }
+
+  .card:hover {
+    background: var(--hover);
+    border-color: #3a3a40;
+    text-decoration: none;
+  }
+
+  .card-label {
     color: var(--muted);
+    font-size: 0.8rem;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+
+  .card h2 {
+    margin: 0;
+    font-size: 1.2rem;
+    letter-spacing: -0.02em;
+    line-height: 1.3;
+  }
+
+  .card p {
+    margin: 0;
+    color: var(--muted);
+    font-size: 0.95rem;
+    line-height: 1.55;
+    flex: 1;
+  }
+
+  .card-cta {
+    margin-top: 0.35rem;
     font-size: 0.9rem;
+    font-weight: 500;
   }
 </style>
