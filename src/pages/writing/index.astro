@@ -10,12 +10,12 @@ const posts = (await getCollection('blog', ({ data }) => !data.draft)).sort(
 );
 ---
 
-<BaseLayout title="Writing" description="All posts from Kruse — notes on learning, building, and debugging.">
+<BaseLayout title="Interests" description="Essays and field notes on AI, cybersecurity, and longevity health.">
   <Header />
   <main class="page">
     <header class="page-header">
-      <h1>Writing</h1>
-      <p>Essays and notes about learning to code and shipping small projects.</p>
+      <h1>Interests</h1>
+      <p>Essays and field notes on AI, cybersecurity, and longevity health.</p>
     </header>
     <div class="list">
       {posts.map((post) => <PostCard post={post} />)}
