@@ -68,15 +68,15 @@ const pills = [
 
     <section class="intro-wrap" aria-label="Introduction">
       <div class="intro-card">
-        <h1>Hello!</h1>
+        <h1>Hello from Austin, TX!</h1>
         <p>
           Experienced seller in both Account Executive (AE) and sales leadership roles. Previously
           Rapid7, Commerce, and Box. Looking to return to a high-impact individual contributor
           AE / Account Director seat at an AI-native or cyber company.
         </p>
         <p>
-          Cybersecurity, AI, and longevity health nerd based in Austin, TX. Thank you for checking
-          out my website!
+          I built this website as my first project using cloud agents. Thank you for checking it
+          out!
         </p>
         <div class="intro-actions">
           <a class="btn" href="/professional">Professional</a>
@@ -94,9 +94,10 @@ const pills = [
     if (!textEl) return;
 
     var lines = [
-      "Hi, I'm Brandon",
-      'Technical sales. Cybersecurity & AI.',
-      'Looking for a high-impact AE / Account Director seat.',
+      "Hi, I'm Brandon.",
+      'Most people call me Kruse.',
+      'I enjoy selling complex, technical products.',
+      'Checkout some of my skills and competencies.',
     ];
 
     var lineIndex = 0;
@@ -110,20 +111,20 @@ const pills = [
         textEl.textContent = line.slice(0, charIndex);
         if (charIndex >= line.length) {
           deleting = true;
-          window.setTimeout(tick, 1800);
+          window.setTimeout(tick, 2600);
           return;
         }
-        window.setTimeout(tick, 42);
+        window.setTimeout(tick, 68);
       } else {
         charIndex -= 1;
         textEl.textContent = line.slice(0, Math.max(0, charIndex));
         if (charIndex <= 0) {
           deleting = false;
           lineIndex = (lineIndex + 1) % lines.length;
-          window.setTimeout(tick, 320);
+          window.setTimeout(tick, 500);
           return;
         }
-        window.setTimeout(tick, 24);
+        window.setTimeout(tick, 36);
       }
     }
 
@@ -191,11 +192,7 @@ const pills = [
 
   .typewriter {
     margin: 0;
-    max-width: min(92vw, 28rem);
-    padding: 0.85rem 1.1rem;
-    border-radius: 12px;
-    background: rgba(10, 14, 22, 0.72);
-    backdrop-filter: blur(8px);
+    max-width: min(92vw, 34rem);
     font-size: clamp(1.45rem, 4.5vw, 2.35rem);
     font-weight: 700;
     letter-spacing: -0.035em;
