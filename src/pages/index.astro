@@ -5,55 +5,55 @@ import Footer from '../components/Footer.astro';
 
 const pills = [
   // top band
-  { label: 'Technical Discovery', top: '4%', left: '6%', delay: '0s' },
-  { label: 'Full-Cycle Ownership', top: '5%', left: '28%', delay: '0.3s' },
-  { label: 'Consultative selling', top: '4%', left: '52%', delay: '0.6s' },
-  { label: 'Complex Multi-Threaded Deals', top: '6%', left: '72%', delay: '0.9s' },
-  { label: 'Hiring', top: '8%', left: '90%', delay: '1.2s' },
+  { label: 'Technical Discovery', top: 4, left: 6 },
+  { label: 'Full-Cycle Ownership', top: 5, left: 28 },
+  { label: 'Consultative selling', top: 4, left: 52 },
+  { label: 'Complex Multi-Threaded Deals', top: 6, left: 72 },
+  { label: 'Hiring', top: 8, left: 90 },
   // upper band
-  { label: 'Threat Intelligence', top: '14%', left: '2%', delay: '0.2s' },
-  { label: 'CIO / CISO / CTO Engagement', top: '15%', left: '18%', delay: '0.5s' },
-  { label: 'Workflow Mapping', top: '13%', left: '78%', delay: '0.8s' },
-  { label: 'Negotiation', top: '16%', left: '92%', delay: '1.1s' },
-  // upper-mid sides (keep center clear)
-  { label: 'POC / POV Project Management', top: '24%', left: '3%', delay: '0.4s' },
-  { label: 'Solution selling', top: '22%', left: '88%', delay: '0.7s' },
-  { label: 'CNAPP', top: '30%', left: '5%', delay: '1.0s' },
-  { label: 'Outcome-Driven ROI', top: '28%', left: '78%', delay: '1.3s' },
-  { label: 'CSPM', top: '29%', left: '92%', delay: '0.1s' },
-  { label: 'Commerce', top: '34%', left: '16%', delay: '1.5s' },
-  { label: 'Gong', top: '33%', left: '70%', delay: '0.3s' },
+  { label: 'Threat Intelligence', top: 14, left: 2 },
+  { label: 'CIO / CISO / CTO Engagement', top: 15, left: 18 },
+  { label: 'Workflow Mapping', top: 13, left: 78 },
+  { label: 'Negotiation', top: 16, left: 92 },
+  // upper-mid sides
+  { label: 'POC / POV Project Management', top: 24, left: 3 },
+  { label: 'Solution selling', top: 22, left: 88 },
+  { label: 'CNAPP', top: 30, left: 5 },
+  { label: 'Outcome-Driven ROI', top: 28, left: 78 },
+  { label: 'CSPM', top: 29, left: 92 },
+  { label: 'Commerce', top: 34, left: 16 },
+  { label: 'Gong', top: 33, left: 70 },
   // mid sides
-  { label: 'CIEM', top: '40%', left: '4%', delay: '0.6s' },
-  { label: 'SIEM', top: '38%', left: '90%', delay: '0.9s' },
-  { label: 'Platform', top: '44%', left: '8%', delay: '1.2s' },
-  { label: 'API', top: '42%', left: '82%', delay: '1.6s' },
-  { label: 'MDR', top: '48%', left: '3%', delay: '0.2s' },
-  { label: 'CTEM', top: '46%', left: '74%', delay: '0.5s' },
-  { label: 'Leadership', top: '50%', left: '88%', delay: '0.8s' },
-  { label: 'Infrastructure', top: '52%', left: '10%', delay: '1.1s' },
-  { label: 'Deployment', top: '54%', left: '78%', delay: '1.4s' },
+  { label: 'CIEM', top: 40, left: 4 },
+  { label: 'SIEM', top: 38, left: 90 },
+  { label: 'Platform', top: 44, left: 8 },
+  { label: 'API', top: 42, left: 82 },
+  { label: 'MDR', top: 48, left: 3 },
+  { label: 'CTEM', top: 46, left: 74 },
+  { label: 'Leadership', top: 50, left: 88 },
+  { label: 'Infrastructure', top: 52, left: 10 },
+  { label: 'Deployment', top: 54, left: 78 },
   // lower-mid
-  { label: 'AI/LLM Governance', top: '58%', left: '5%', delay: '0.4s' },
-  { label: 'Agentic Workflows', top: '56%', left: '68%', delay: '0.7s' },
-  { label: 'Frontier LLMs', top: '62%', left: '16%', delay: '1.0s' },
-  { label: 'SFDC', top: '60%', left: '88%', delay: '1.3s' },
-  { label: 'Agent harness', top: '64%', left: '6%', delay: '0.1s' },
-  { label: 'Integrations', top: '63%', left: '74%', delay: '1.6s' },
-  // lower band (can cross more of width)
-  { label: 'NIST/ISO/CIS Framework Mapping', top: '68%', left: '28%', delay: '0.3s' },
-  { label: 'Enterprise Content Management', top: '70%', left: '54%', delay: '0.6s' },
-  { label: 'New logo land', top: '72%', left: '4%', delay: '0.9s' },
-  { label: 'Customer expansion', top: '71%', left: '80%', delay: '1.2s' },
-  { label: 'Channel / VAR Co-Sell', top: '76%', left: '18%', delay: '1.5s' },
-  { label: 'Pipeline Generation', top: '75%', left: '48%', delay: '0.2s' },
-  { label: 'MEDDPICC', top: '78%', left: '66%', delay: '0.5s' },
+  { label: 'AI/LLM Governance', top: 58, left: 5 },
+  { label: 'Agentic Workflows', top: 56, left: 68 },
+  { label: 'Frontier LLMs', top: 62, left: 16 },
+  { label: 'SFDC', top: 60, left: 88 },
+  { label: 'Agent harness', top: 64, left: 6 },
+  { label: 'Integrations', top: 63, left: 74 },
+  // lower band
+  { label: 'NIST/ISO/CIS Framework Mapping', top: 68, left: 28 },
+  { label: 'Enterprise Content Management', top: 70, left: 54 },
+  { label: 'New logo land', top: 72, left: 4 },
+  { label: 'Customer expansion', top: 71, left: 80 },
+  { label: 'Channel / VAR Co-Sell', top: 76, left: 18 },
+  { label: 'Pipeline Generation', top: 75, left: 48 },
+  { label: 'MEDDPICC', top: 78, left: 66 },
   // bottom band
-  { label: 'Forecasting', top: '84%', left: '6%', delay: '0.8s' },
-  { label: 'SDLC', top: '83%', left: '28%', delay: '1.1s' },
-  { label: 'Developer workflows', top: '82%', left: '48%', delay: '1.4s' },
-  { label: 'Knowledge worker workflows', top: '86%', left: '68%', delay: '0.4s' },
-  { label: 'Daily AI practitioner', top: '90%', left: '22%', delay: '0.7s' },
+  { label: 'Forecasting', top: 84, left: 6 },
+  { label: 'SDLC', top: 83, left: 28 },
+  { label: 'Developer workflows', top: 82, left: 48 },
+  { label: 'Knowledge worker workflows', top: 86, left: 68 },
+  { label: 'Daily AI practitioner', top: 90, left: 22 },
 ];
 ---
 
@@ -64,13 +64,15 @@ const pills = [
   <Header />
   <main>
     <section class="hero" aria-label="Expertise">
-      <div class="pill-field">
+      <div class="pill-field" id="pill-field">
         {
-          pills.map((pill) => (
+          pills.map((pill, index) => (
             <a
               class="pill"
               href="/professional"
-              style={`top:${pill.top};left:${pill.left};animation-delay:${pill.delay}`}
+              data-top={String(pill.top)}
+              data-left={String(pill.left)}
+              data-index={String(index)}
             >
               {pill.label}
             </a>
@@ -108,45 +110,136 @@ const pills = [
 
 <script is:inline>
   (function () {
+    // Typewriter
     var textEl = document.getElementById('typewriter-text');
-    if (!textEl) return;
+    if (textEl) {
+      var lines = [
+        "Hi, I'm Brandon.",
+        'Most people call me Kruse.',
+        'I enjoy selling complex, technical products.',
+        'Checkout some of my skills and competencies.',
+      ];
+      var lineIndex = 0;
+      var charIndex = 0;
+      var deleting = false;
 
-    var lines = [
-      "Hi, I'm Brandon.",
-      'Most people call me Kruse.',
-      'I enjoy selling complex, technical products.',
-      'Checkout some of my skills and competencies.',
-    ];
-
-    var lineIndex = 0;
-    var charIndex = 0;
-    var deleting = false;
-
-    function tick() {
-      var line = lines[lineIndex] || '';
-      if (!deleting) {
-        charIndex += 1;
-        textEl.textContent = line.slice(0, charIndex);
-        if (charIndex >= line.length) {
-          deleting = true;
-          window.setTimeout(tick, 2600);
-          return;
+      function typeTick() {
+        var line = lines[lineIndex] || '';
+        if (!deleting) {
+          charIndex += 1;
+          textEl.textContent = line.slice(0, charIndex);
+          if (charIndex >= line.length) {
+            deleting = true;
+            window.setTimeout(typeTick, 2600);
+            return;
+          }
+          window.setTimeout(typeTick, 68);
+        } else {
+          charIndex -= 1;
+          textEl.textContent = line.slice(0, Math.max(0, charIndex));
+          if (charIndex <= 0) {
+            deleting = false;
+            lineIndex = (lineIndex + 1) % lines.length;
+            window.setTimeout(typeTick, 500);
+            return;
+          }
+          window.setTimeout(typeTick, 36);
         }
-        window.setTimeout(tick, 68);
-      } else {
-        charIndex -= 1;
-        textEl.textContent = line.slice(0, Math.max(0, charIndex));
-        if (charIndex <= 0) {
-          deleting = false;
-          lineIndex = (lineIndex + 1) % lines.length;
-          window.setTimeout(tick, 500);
-          return;
-        }
-        window.setTimeout(tick, 36);
       }
+      typeTick();
     }
 
-    tick();
+    // Floating pills: scatter → settle → gentle drift
+    var field = document.getElementById('pill-field');
+    if (!field) return;
+    var nodes = Array.prototype.slice.call(field.querySelectorAll('.pill'));
+    if (!nodes.length) return;
+
+    function rand(min, max) {
+      return min + Math.random() * (max - min);
+    }
+
+    function easeOutCubic(t) {
+      return 1 - Math.pow(1 - t, 3);
+    }
+
+    var items = nodes.map(function (el, i) {
+      var targetTop = parseFloat(el.getAttribute('data-top') || '50');
+      var targetLeft = parseFloat(el.getAttribute('data-left') || '50');
+      // Start scattered around the field (bias away from exact center)
+      var startTop = rand(2, 92);
+      var startLeft = rand(1, 90);
+      if (Math.abs(startTop - 45) < 12 && Math.abs(startLeft - 45) < 20) {
+        startTop = startTop < 45 ? rand(2, 28) : rand(62, 92);
+      }
+      el.style.top = startTop + '%';
+      el.style.left = startLeft + '%';
+      el.style.opacity = '0';
+      el.classList.add('is-animating');
+
+      return {
+        el: el,
+        startTop: startTop,
+        startLeft: startLeft,
+        targetTop: targetTop,
+        targetLeft: targetLeft,
+        // stagger settle
+        settleDelay: i * 28 + rand(0, 120),
+        settleMs: rand(1100, 1700),
+        // continuous float params
+        ampX: rand(6, 18),
+        ampY: rand(8, 22),
+        speedX: rand(0.00035, 0.0007),
+        speedY: rand(0.0004, 0.00085),
+        phaseX: rand(0, Math.PI * 2),
+        phaseY: rand(0, Math.PI * 2),
+        settled: false,
+      };
+    });
+
+    var start = performance.now();
+
+    function frame(now) {
+      var elapsed = now - start;
+
+      for (var i = 0; i < items.length; i++) {
+        var item = items[i];
+        var el = item.el;
+        var local = elapsed - item.settleDelay;
+
+        if (local < 0) {
+          el.style.opacity = '0';
+          continue;
+        }
+
+        if (!item.settled) {
+          var t = Math.min(1, local / item.settleMs);
+          var e = easeOutCubic(t);
+          var top = item.startTop + (item.targetTop - item.startTop) * e;
+          var left = item.startLeft + (item.targetLeft - item.startLeft) * e;
+          el.style.top = top + '%';
+          el.style.left = left + '%';
+          el.style.opacity = String(Math.min(1, t * 1.35));
+          el.style.transform = 'translate3d(0,0,0) scale(' + (0.86 + 0.14 * e) + ')';
+
+          if (t >= 1) {
+            item.settled = true;
+            el.style.top = item.targetTop + '%';
+            el.style.left = item.targetLeft + '%';
+            el.style.opacity = '1';
+            el.classList.remove('is-animating');
+          }
+        } else {
+          var ox = Math.sin(now * item.speedX + item.phaseX) * item.ampX;
+          var oy = Math.cos(now * item.speedY + item.phaseY) * item.ampY;
+          el.style.transform = 'translate3d(' + ox + 'px,' + oy + 'px,0)';
+        }
+      }
+
+      window.requestAnimationFrame(frame);
+    }
+
+    window.requestAnimationFrame(frame);
   })();
 </script>
 
@@ -186,8 +279,13 @@ const pills = [
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-    animation: drift 9s ease-in-out infinite alternate;
     backdrop-filter: blur(4px);
+    will-change: transform, top, left, opacity;
+    transform: translate3d(0, 0, 0);
+  }
+
+  .pill.is-animating {
+    pointer-events: none;
   }
 
   .pill:hover {
@@ -195,6 +293,7 @@ const pills = [
     border-color: #8bb6ff;
     background: rgba(30, 52, 88, 0.9);
     text-decoration: none;
+    z-index: 3;
   }
 
   .hero-copy {
@@ -298,15 +397,6 @@ const pills = [
     font-size: 0.95rem;
   }
 
-  @keyframes drift {
-    from {
-      transform: translate3d(0, 0, 0);
-    }
-    to {
-      transform: translate3d(0, -10px, 0);
-    }
-  }
-
   @keyframes blink {
     0%,
     45% {
@@ -319,10 +409,6 @@ const pills = [
   }
 
   @media (prefers-reduced-motion: reduce) {
-    .pill {
-      animation: none;
-    }
-
     .caret {
       animation: none;
     }
