@@ -140,14 +140,12 @@ const roles = [
             <article class="role">
               <div class="role-head">
                 <div class="role-title-row">
-                  <h3 class="role-title">{role.title}</h3>
+                  <h3 class="role-title">
+                    {role.title} <span class="co">· {role.company}</span>
+                  </h3>
                   {role.dates && <p class="dates">{role.dates}</p>}
                 </div>
-                <p class="meta">
-                  <span class="co">{role.company}</span>
-                  <span class="sep"> · </span>
-                  {role.location}
-                </p>
+                <p class="loc">{role.location}</p>
               </div>
               <ul>
                 {role.bullets.map((b) => (
@@ -283,7 +281,12 @@ const roles = [
     font-size: 1.05rem;
     font-weight: 600;
     letter-spacing: -0.015em;
-    flex: 1 1 12rem;
+    flex: 1 1 16rem;
+  }
+
+  .role-title .co {
+    font-weight: 500;
+    color: var(--muted);
   }
 
   .dates {
@@ -294,15 +297,10 @@ const roles = [
     white-space: nowrap;
   }
 
-  .meta {
+  .loc {
     margin: 0.25rem 0 0;
     color: var(--muted);
     font-size: 0.925rem;
-  }
-
-  .meta .co {
-    font-weight: 500;
-    color: var(--text);
   }
 
   .role ul {
