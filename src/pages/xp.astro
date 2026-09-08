@@ -214,14 +214,10 @@ const roles = [
   }
 
   .summary {
-    margin: 0 0 1rem;
+    margin: 0;
     color: var(--muted);
     font-size: 1.05rem;
     line-height: 1.7;
-  }
-
-  .summary.emphasis {
-    color: var(--text);
   }
 
   .comp-grid {
@@ -284,6 +280,9 @@ const roles = [
     margin: 0 0 0.75rem;
     color: var(--muted);
     font-size: 0.925rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.35rem 0.45rem;
   }
 
   .role ul {
