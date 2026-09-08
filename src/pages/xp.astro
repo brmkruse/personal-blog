@@ -1,1 +1,432 @@
-PLACEHOLDER_LOAD_FROM_DISK
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import { usfBullsSrc } from '../assets/usf-bulls';
+
+const companyLogos = {
+  rapid7: '/logos/rapid7.svg',
+  bigcommerce: '/logos/bigcommerce.svg',
+  box: '/logos/box.svg',
+};
+
+const competencies = [
+  {
+    title: 'Technical Sales',
+    items: [
+      'Full-Cycle Ownership',
+      'Multi-Threading',
+      'C-suite, Engineering, & AI-Leader Engagement',
+      'Problem & Workflow Mapping',
+      'POC / POV Project Management',
+      'Value & Outcome-driven ROI',
+      'Legal / Procurement Negotiation',
+      'Enterprise Deployment & Integration',
+    ],
+  },
+  {
+    title: 'Cloud, Security & AI',
+    items: [
+      'Frontier LLMs & Agentic Workflows',
+      'SDLC & Developer Workflows',
+      'Cloud Security Platforms (CNAPP, SIEM, MDR, CTEM)',
+      'AppSec / Vulnerability Remediation',
+      'Security & Compliance (SOC 2, HIPAA, PCI, ISO27001)',
+    ],
+  },
+  {
+    title: 'GTM Execution',
+    items: [
+      'New Logo Land & Expansion',
+      'Territory & Pipeline Development',
+      'Channel / VAR Co-Sell',
+      'MEDDPICC',
+      'Forecasting Accuracy',
+      'Cross-Functional Close (SE, Product, Engineering, Legal)',
+      'Product Feedback Loops',
+    ],
+  },
+];
+
+const roles = [
+  {
+    title: 'Manager, Commercial Sales',
+    company: 'Rapid7',
+    logo: 'rapid7',
+    logoClass: 'wordmark',
+    location: 'Austin, TX',
+    dates: '2023 – Aug. 2026',
+    bullets: [
+      'Own full GTM and revenue ownership for the Central Commercial territory, running and supporting end-to-end sales cycles for a cybersecurity platform into mid-market accounts alongside a 6-person AE team, including land and expansion deals.',
+      'Led the team to exceed quota; President\'s Club achiever with company-wide recognition for top sales performance.',
+      'Sold directly to CIOs and CISOs, Security/Cloud Engineers, Security Architects, DevSecOps engineers, Platform/Infrastructure engineers.',
+    ],
+  },
+  {
+    title: 'Senior Account Executive, Mid-Market',
+    company: 'BigCommerce',
+    logo: 'bigcommerce',
+    logoClass: 'mark',
+    location: 'Austin, TX',
+    dates: '2018 – 2023',
+    bullets: [
+      'Owned full end-to-end sales cycle selling a headless commerce platform into mid-market accounts, over-achieving quota for 11 of 14 quarters.',
+      'Sold directly to backend and platform engineers, DevOps/SRE teams, CTOs, and other technology leaders responsible for integrations, customizations, APIs, and site performance.',
+    ],
+  },
+  {
+    title: 'Senior Manager, Enterprise Sales Development',
+    company: 'BigCommerce',
+    logo: null,
+    logoClass: null,
+    location: 'Austin, TX',
+    dates: null,
+    bullets: [
+      'Led the Enterprise SDR team to exceed quota; scaled headcount from 2 to 16 ICs + 2 managers, and promoted 6 team members in 18 months.',
+      'Restructured the team into Inbound, Outbound, and Account Development functions to optimize workflows and create a new talent pool.',
+    ],
+  },
+  {
+    title: 'Manager, Outbound Business - Large Enterprise & Strategic',
+    company: 'Box',
+    logo: 'box',
+    logoClass: 'wordmark',
+    location: 'Austin, TX',
+    dates: '2016 – 2018',
+    bullets: [
+      'Led a team of 8–15 SDRs to exceed quota supporting Enterprise, Large Enterprise, and Strategic segments.',
+      'Created the company\'s first dedicated OBR role for Box Platform (API) to align with SVP of Platform GTM strategy.',
+      'Helped scale IC headcount from 18 to 47 and manager headcount from 2 to 6 across U.S. and U.K.; hired and remote-managed the first SDR team in the NYC office; promoted 8 ICs internally within 2 years.',
+      'Engaged with platform engineers, engineering team leads and managers, VP of Engineering, and CTOs to build top of funnel.',
+    ],
+  },
+];
+---
+
+<BaseLayout
+  title="Professional XP"
+  description="Brandon Kruse — Account Executive | Technical Sales | Cybersecurity & AI. Experience, competencies, and education."
+>
+  <Header />
+  <main class="page">
+    <header class="hero">
+      <p class="eyebrow">Professional XP</p>
+      <h1>Brandon Kruse</h1>
+      <p class="headline">Account Executive · Technical Sales · Cybersecurity &amp; AI</p>
+    </header>
+
+    <section class="section" aria-labelledby="summary-heading">
+      <h2 id="summary-heading">Summary</h2>
+      <p class="summary">
+        Full-cycle technical seller with 10+ years owning and supporting complex, highly technical
+        solutions into mid-market and enterprise accounts. Most recently led a Commercial GTM team
+        at Rapid7 while still running deals with CIOs, CISOs, Security Engineers, and platform
+        teams. President's Club performer who sources pipeline, multi-threads engineering and
+        executive buyers, activates channel partners, and works with Product, Engineering, and Legal
+        to close and activate complex deals. Specific domain depth in cybersecurity and emerging AI
+        technologies, including daily use of frontier models and agentic workflows, paired with a
+        Mechanical Engineering foundation. Looking to bring a high-agency IC motion to my next role.
+      </p>
+    </section>
+
+    <section class="section" aria-labelledby="competencies-heading">
+      <h2 id="competencies-heading">Skills and Competencies</h2>
+      <div class="comp-grid">
+        {
+          competencies.map((group) => (
+            <div class="comp-card">
+              <h3>{group.title}</h3>
+              <ul>
+                {group.items.map((item) => (
+                  <li>{item}</li>
+                ))}
+              </ul>
+            </div>
+          ))
+        }
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="experience-heading">
+      <h2 id="experience-heading">Experience</h2>
+      <div class="roles">
+        {
+          roles.map((role) => (
+            <article class="role-row">
+              <div class="role-copy">
+                <div class="role-head">
+                  <div class="role-title-row">
+                    <h3 class="role-title">
+                      {role.title} <span class="co">· {role.company}</span>
+                    </h3>
+                    {role.dates && <p class="dates">{role.dates}</p>}
+                  </div>
+                  <p class="loc">{role.location}</p>
+                </div>
+                <ul>
+                  {role.bullets.map((b) => (
+                    <li>{b}</li>
+                  ))}
+                </ul>
+              </div>
+              <div
+                class:list={['role-logo', role.logoClass]}
+                aria-hidden="true"
+              >
+                {role.logo && (
+                  <img src={companyLogos[role.logo as keyof typeof companyLogos]} alt="" />
+                )}
+              </div>
+            </article>
+          ))
+        }
+      </div>
+    </section>
+
+    <section class="section education" aria-labelledby="education-heading">
+      <h2 id="education-heading">Education</h2>
+      <div class="edu-row">
+        <div class="edu-copy">
+          <p class="edu-degree">B.S. Mechanical Engineering - University of South Florida</p>
+          <p class="loc">Tampa, FL</p>
+          <ul>
+            <li>Self-funded education through part-time work and scholarships.</li>
+          </ul>
+        </div>
+        <div class="edu-logo" aria-hidden="true">
+          <img src={usfBullsSrc} alt="" width="98" height="78" />
+        </div>
+      </div>
+    </section>
+  </main>
+  <Footer />
+</BaseLayout>
+
+<style>
+  .page {
+    max-width: 740px;
+    margin: 0 auto;
+    padding: 3rem 1.25rem 1rem;
+  }
+
+  .eyebrow {
+    margin: 0 0 0.65rem;
+    color: var(--muted);
+    font-size: 0.875rem;
+  }
+
+  .hero h1 {
+    margin: 0 0 0.45rem;
+    font-size: clamp(2rem, 5vw, 2.6rem);
+    letter-spacing: -0.035em;
+    line-height: 1.15;
+  }
+
+  .headline {
+    margin: 0 0 0.85rem;
+    color: var(--muted);
+    font-size: 1.05rem;
+  }
+
+  .section {
+    margin-top: 2.75rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--border);
+  }
+
+  .section h2 {
+    margin: 0 0 1rem;
+    font-size: 1.15rem;
+    letter-spacing: -0.02em;
+  }
+
+  .summary {
+    margin: 0;
+    color: var(--muted);
+    font-size: 1.05rem;
+    line-height: 1.7;
+  }
+
+  .comp-grid {
+    display: grid;
+    gap: 1rem;
+  }
+
+  @media (min-width: 700px) {
+    .comp-grid {
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+    }
+  }
+
+  .comp-card {
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 1.1rem 1.15rem;
+    background: transparent;
+  }
+
+  .comp-card h3 {
+    margin: 0 0 0.75rem;
+    font-size: 0.95rem;
+    letter-spacing: -0.01em;
+  }
+
+  .comp-card ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .comp-card li {
+    color: var(--muted);
+    font-size: 0.9rem;
+    line-height: 1.45;
+    padding: 0.28rem 0;
+    border-top: 1px solid var(--border);
+  }
+
+  .comp-card li:first-child {
+    border-top: none;
+    padding-top: 0;
+  }
+
+  .roles {
+    display: flex;
+    flex-direction: column;
+    gap: 1.85rem;
+  }
+
+  .role-head {
+    margin-bottom: 0.65rem;
+  }
+
+  .role-title-row {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .role-title {
+    margin: 0;
+    font-size: 1.05rem;
+    font-weight: 600;
+    letter-spacing: -0.015em;
+    flex: 1 1 16rem;
+  }
+
+  .role-title .co {
+    font-weight: 500;
+    color: var(--muted);
+  }
+
+  .dates {
+    margin: 0;
+    margin-left: auto;
+    color: var(--muted);
+    font-size: 0.925rem;
+  }
+
+  .loc {
+    margin: 0.25rem 0 0;
+    color: var(--muted);
+    font-size: 0.925rem;
+  }
+
+  .role ul,
+  .education ul {
+    margin: 0.65rem 0 0;
+    padding-left: 1.15rem;
+  }
+
+  .role li,
+  .education li {
+    color: var(--muted);
+    font-size: 0.975rem;
+    line-height: 1.55;
+    margin-bottom: 0.4rem;
+  }
+
+  .role li:last-child,
+  .education li:last-child {
+    margin-bottom: 0;
+  }
+
+  .edu-degree {
+    margin: 0;
+    font-size: 1.05rem;
+    font-weight: 600;
+    letter-spacing: -0.015em;
+  }
+
+  .role-row {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 1.25rem;
+  }
+
+  .role-copy {
+    flex: 1 1 auto;
+    min-width: 0;
+  }
+
+  .role-logo {
+    flex: 0 0 auto;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-end;
+    margin-top: 0.05rem;
+    width: 120px;
+    min-height: 48px;
+  }
+
+  .role-logo img {
+    display: block;
+    width: auto;
+    height: auto;
+    max-height: 48px;
+    max-width: 120px;
+    object-fit: contain;
+  }
+
+  .role-logo.wordmark img {
+    max-height: 36px;
+    max-width: 118px;
+  }
+
+  .role-logo.mark img {
+    max-height: 48px;
+    max-width: 48px;
+  }
+
+  .edu-row {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 1.5rem;
+  }
+
+  .edu-copy {
+    flex: 1 1 auto;
+    min-width: 0;
+  }
+
+  .edu-logo {
+    flex: 0 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin-top: 0.1rem;
+  }
+
+  .edu-logo img {
+    display: block;
+    width: auto;
+    height: 78px;
+    max-width: 98px;
+    object-fit: contain;
+  }
+</style>
