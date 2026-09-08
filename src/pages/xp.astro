@@ -160,10 +160,11 @@ const roles = [
 
     <section class="section education" aria-labelledby="education-heading">
       <h2 id="education-heading">Education</h2>
-      <p class="edu-degree">B.S. Mechanical Engineering</p>
-      <p class="edu-detail">
-        University of South Florida - self-funded through part-time work and scholarships.
-      </p>
+      <p class="edu-degree">B.S. Mechanical Engineering - University of South Florida</p>
+      <p class="loc">Tampa, FL</p>
+      <ul>
+        <li>Self-funded education through part-time work and scholarships.</li>
+      </ul>
     </section>
   </main>
   <Footer />
@@ -303,32 +304,29 @@ const roles = [
     font-size: 0.925rem;
   }
 
-  .role ul {
-    margin: 0;
+  .role ul,
+  .education ul {
+    margin: 0.65rem 0 0;
     padding-left: 1.15rem;
   }
 
-  .role li {
+  .role li,
+  .education li {
     color: var(--muted);
     font-size: 0.975rem;
     line-height: 1.55;
     margin-bottom: 0.4rem;
   }
 
-  .role li:last-child {
+  .role li:last-child,
+  .education li:last-child {
     margin-bottom: 0;
   }
 
   .edu-degree {
-    margin: 0 0 0.35rem;
+    margin: 0;
     font-size: 1.05rem;
     font-weight: 600;
     letter-spacing: -0.015em;
-  }
-
-  .edu-detail {
-    margin: 0;
-    color: var(--muted);
-    font-size: 0.975rem;
   }
 </style>
