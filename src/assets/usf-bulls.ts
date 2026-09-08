@@ -1,1 +1,2 @@
-PLACEHOLDER_LOAD_FROM_FILE
+/** Athletic USF Bulls logo (self-hosted). */
+export const usfBullsSrc = '/logos/usf-bulls.svg';
