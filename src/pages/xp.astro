@@ -51,9 +51,9 @@ const roles = [
     location: 'Austin, TX',
     dates: '2023 – Aug. 2026',
     bullets: [
-      'Led commercial GTM for a cybersecurity and AI platform into mid-market accounts.',
-      'Partnered with CIOs, CISOs, SecOps, and cloud/security engineers on exposure management, detection & response, and cloud native application protection.',
-      'President\'s Club performer; activated channel partners and expansion motions alongside Engineering, Product, Legal, and executives.',
+      'Own full GTM and revenue ownership for the Central Commercial territory, running and supporting end-to-end sales cycles for a cybersecurity platform into mid-market accounts alongside a 6-person AE team, including land and expansion deals.',
+      'Led the team to exceed quota; President\'s Club achiever with company-wide recognition for top sales performance.',
+      'Sold directly to CIOs and CISOs, Security/Cloud Engineers, Security Architects, DevSecOps engineers, Platform/Infrastructure engineers.',
     ],
   },
   {
@@ -62,8 +62,8 @@ const roles = [
     location: 'Austin, TX',
     dates: '2018 – 2023',
     bullets: [
-      'Owned full-cycle sales of a headless commerce platform to mid-market buyers.',
-      'Sold to engineers, DevOps/SRE, and CTOs on APIs, integrations, and performance.',
+      'Owned full end-to-end sales cycle selling a headless commerce platform into mid-market accounts, over-achieving quota for 11 of 14 quarters.',
+      'Sold directly to backend and platform engineers, DevOps/SRE teams, CTOs, and other technology leaders responsible for integrations, customizations, APIs, and site performance.',
     ],
   },
   {
@@ -72,18 +72,20 @@ const roles = [
     location: 'Austin, TX',
     dates: null,
     bullets: [
-      'Led the enterprise SDR organization; developed talent and raised the bar on execution.',
-      'Restructured inbound, outbound, and account development motions.',
+      'Led the Enterprise SDR team to exceed quota; scaled headcount from 2 to 16 ICs + 2 managers, and promoted 6 team members in 18 months.',
+      'Restructured the team into Inbound, Outbound, and Account Development functions to optimize workflows and create a new talent pool.',
     ],
   },
   {
-    title: 'Manager, Outbound Business',
-    company: 'Box, Inc.',
+    title: 'Manager, Outbound Business — Enterprise, Large Enterprise & Strategic',
+    company: 'Box',
     location: 'Austin, TX',
     dates: '2016 – 2018',
     bullets: [
-      'Led outbound for Enterprise and Strategic segments.',
-      'Built a Platform/API outbound motion engaging engineering leaders and CTOs.',
+      'Led a team of 8–15 SDRs to exceed quota supporting Enterprise, Large Enterprise, and Strategic segments.',
+      'Created the company\'s first dedicated OBR role for Box Platform (API) to align with SVP of Platform GTM strategy.',
+      'Helped scale IC headcount from 18 to 47 and manager headcount from 2 to 6 across U.S. and U.K.; hired and remote-managed the first SDR team in the NYC office; promoted 8 ICs internally within 2 years.',
+      'Engaged with platform engineers, engineering team leads and managers, VP of Engineering, and CTOs to build top of funnel.',
     ],
   },
 ];
@@ -140,18 +142,13 @@ const roles = [
           roles.map((role) => (
             <article class="role">
               <div class="role-head">
-                <h3>{role.title}</h3>
-                <p class="role-org">
-                  {role.company}
-                  <span aria-hidden="true">·</span>
-                  {role.location}
-                  {role.dates && (
-                    <>
-                      <span aria-hidden="true">·</span>
-                      <span class="dates">{role.dates}</span>
-                    </>
-                  )}
-                </p>
+                <div class="role-title-row">
+                  <h3 class="role-title">
+                    {role.title} <span class="co">· {role.company}</span>
+                  </h3>
+                  {role.dates && <p class="dates">{role.dates}</p>}
+                </div>
+                <p class="loc">{role.location}</p>
               </div>
               <ul>
                 {role.bullets.map((b) => (
@@ -267,22 +264,46 @@ const roles = [
   .roles {
     display: flex;
     flex-direction: column;
-    gap: 1.75rem;
+    gap: 1.85rem;
   }
 
-  .role h3 {
-    margin: 0 0 0.3rem;
+  .role-head {
+    margin-bottom: 0.65rem;
+  }
+
+  .role-title-row {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .role-title {
+    margin: 0;
     font-size: 1.05rem;
+    font-weight: 600;
     letter-spacing: -0.015em;
+    flex: 1 1 16rem;
   }
 
-  .role-org {
-    margin: 0 0 0.75rem;
+  .role-title .co {
+    font-weight: 500;
+    color: var(--muted);
+  }
+
+  .dates {
+    margin: 0 0 0 0;
+    margin-left: auto;
     color: var(--muted);
     font-size: 0.925rem;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.35rem 0.45rem;
+    white-space: nowrap;
+  }
+
+  .loc {
+    margin: 0.25rem 0 0;
+    color: var(--muted);
+    font-size: 0.925rem;
   }
 
   .role ul {
