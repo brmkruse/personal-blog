@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://brmkruse.github.io/personal-blog/sitemap-index.xml
+Sitemap: https://xkruse.com/sitemap-index.xml
