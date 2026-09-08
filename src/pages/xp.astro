@@ -305,16 +305,17 @@ const roles = [
     display: flex;
     align-items: baseline;
     justify-content: space-between;
-    gap: 1rem;
-    flex-wrap: wrap;
+    gap: 0.75rem;
+    flex-wrap: nowrap;
   }
 
   .role-title {
     margin: 0;
-    font-size: 1.05rem;
+    font-size: 1.02rem;
     font-weight: 600;
-    letter-spacing: -0.015em;
-    flex: 1 1 16rem;
+    letter-spacing: -0.02em;
+    flex: 1 1 auto;
+    min-width: 0;
   }
 
   .role-title .co {
@@ -364,9 +365,9 @@ const roles = [
 
   .role-row {
     display: flex;
-    align-items: flex-start;
+    align-items: center;
     justify-content: space-between;
-    gap: 1.25rem;
+    gap: 1rem;
   }
 
   .role-copy {
@@ -377,10 +378,10 @@ const roles = [
   .role-logo {
     flex: 0 0 auto;
     display: flex;
-    align-items: flex-start;
+    align-items: center;
     justify-content: flex-end;
-    margin-top: 0.05rem;
-    width: 120px;
+    align-self: center;
+    width: 104px;
     min-height: 48px;
   }
 
@@ -389,13 +390,13 @@ const roles = [
     width: auto;
     height: auto;
     max-height: 48px;
-    max-width: 120px;
+    max-width: 104px;
     object-fit: contain;
   }
 
   .role-logo.wordmark img {
     max-height: 36px;
-    max-width: 118px;
+    max-width: 102px;
   }
 
   .role-logo.mark img {
