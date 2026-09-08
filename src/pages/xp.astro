@@ -70,7 +70,7 @@ const roles = [
     location: 'Austin, TX',
     dates: '2018 – 2023',
     bullets: [
-      'Owned full end-to-end sales cycle selling a headless commerce platform into mid-market accounts, over-achieving quota for 11 of 14 quarters.',
+      'Owned full end-to-end sales cycle selling a headless commerce platform into mid-market accounts, consistently exceeding quota.',
       'Sold directly to backend and platform engineers, DevOps/SRE teams, CTOs, and other technology leaders responsible for integrations, customizations, APIs, and site performance.',
     ],
   },
@@ -155,12 +155,9 @@ const roles = [
             <article class="role-row">
               <div class="role-copy">
                 <div class="role-head">
-                  <div class="role-title-row">
-                    <h3 class="role-title">
-                      {role.title} <span class="co">· {role.company}</span>
-                    </h3>
-                    {role.dates && <p class="dates">{role.dates}</p>}
-                  </div>
+                  <h3 class="role-title">
+                    {role.title} <span class="co">· {role.company}</span>
+                  </h3>
                   <p class="loc">{role.location}</p>
                 </div>
                 <ul>
@@ -169,14 +166,19 @@ const roles = [
                   ))}
                 </ul>
               </div>
-              <div
-                class:list={['role-logo', role.logoClass]}
-                aria-hidden="true"
-              >
-                {role.logo && (
-                  <img src={companyLogos[role.logo as keyof typeof companyLogos]} alt="" />
-                )}
-              </div>
+              {(role.dates || role.logo) && (
+                <div class="role-aside">
+                  {role.dates && <p class="dates">{role.dates}</p>}
+                  {role.logo && (
+                    <div
+                      class:list={['role-logo', role.logoClass]}
+                      aria-hidden="true"
+                    >
+                      <img src={companyLogos[role.logo as keyof typeof companyLogos]} alt="" />
+                    </div>
+                  )}
+                </div>
+              )}
             </article>
           ))
         }
@@ -301,21 +303,11 @@ const roles = [
     margin-bottom: 0.65rem;
   }
 
-  .role-title-row {
-    display: flex;
-    align-items: baseline;
-    justify-content: space-between;
-    gap: 0.75rem;
-    flex-wrap: nowrap;
-  }
-
   .role-title {
     margin: 0;
-    font-size: 1.02rem;
+    font-size: 1.05rem;
     font-weight: 600;
-    letter-spacing: -0.02em;
-    flex: 1 1 auto;
-    min-width: 0;
+    letter-spacing: -0.015em;
   }
 
   .role-title .co {
@@ -323,12 +315,23 @@ const roles = [
     color: var(--muted);
   }
 
+  .role-aside {
+    flex: 0 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: flex-start;
+    gap: 0.85rem;
+    width: 118px;
+  }
+
   .dates {
     margin: 0;
-    margin-left: auto;
     color: var(--muted);
     font-size: 0.925rem;
     white-space: nowrap;
+    text-align: right;
+    line-height: 1.3;
   }
 
   .loc {
@@ -365,7 +368,7 @@ const roles = [
 
   .role-row {
     display: flex;
-    align-items: center;
+    align-items: stretch;
     justify-content: space-between;
     gap: 1rem;
   }
@@ -376,12 +379,11 @@ const roles = [
   }
 
   .role-logo {
-    flex: 0 0 auto;
+    flex: 1 1 auto;
     display: flex;
     align-items: center;
     justify-content: flex-end;
-    align-self: center;
-    width: 104px;
+    width: 100%;
     min-height: 48px;
   }
 
@@ -390,13 +392,13 @@ const roles = [
     width: auto;
     height: auto;
     max-height: 48px;
-    max-width: 104px;
+    max-width: 118px;
     object-fit: contain;
   }
 
   .role-logo.wordmark img {
     max-height: 36px;
-    max-width: 102px;
+    max-width: 118px;
   }
 
   .role-logo.mark img {
