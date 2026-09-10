@@ -32,8 +32,6 @@ For parents, that village can look like:
 - **Neighbors** — the people you trust and who live in your literal village (neighborhood)
 - **Familiar strangers** — your favorite barista, your barber, or anyone else that can make your day a little better without knowing as much about you as everyone else
 
-If you're a single parent then your village is the single best investment you can make, both for your child and your own sanity and stability. Single parents are absolute saints, and I respect them so much. I honestly don't know how you do it.
-
 The main takeaway: build and leverage your village.
 
-Whether you're selling large deals in the enterprise, parenting little ones — or hunting for your dream job ;) — always remember that it takes a village to truly win. And winning is always better when you share it with the people that helped you get there.
+Whether you're selling large deals in the enterprise, parenting little ones, or hunting for your dream job - always remember that it takes a village to truly win. And winning is always better when you share it with the people that helped you get there.
