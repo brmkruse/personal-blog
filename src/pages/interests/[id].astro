@@ -18,6 +18,7 @@ export async function getStaticPaths() {
 
 const { post } = Astro.props;
 const { Content, headings } = await render(post);
+const hasToc = headings.some((h) => h.depth === 2);
 
 const allPosts = (await getCollection('blog', ({ data }) => !data.draft)).sort(
   (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
@@ -53,7 +54,7 @@ const formattedDate = post.data.pubDate.toLocaleDateString('en-US', {
         </div>
       </header>
 
-      <div class="article-shell">
+      <div class:list={['article-shell', { 'has-toc': hasToc }]}>
         <TableOfContents headings={headings} />
         <div class="reading-column">
           <div class="prose">
@@ -128,7 +129,10 @@ const formattedDate = post.data.pubDate.toLocaleDateString('en-US', {
   }
 
   @media (min-width: 1100px) {
-    .article-shell {
+    /* Only use the TOC + prose grid when a TOC exists.
+       Posts without h2s render a single .reading-column child; a 2-col
+       grid would park that child in the 220px TOC track and squeeze body text. */
+    .article-shell.has-toc {
       display: grid;
       grid-template-columns: 220px minmax(0, var(--max-read));
       justify-content: center;
@@ -137,7 +141,7 @@ const formattedDate = post.data.pubDate.toLocaleDateString('en-US', {
       padding-top: 0.5rem;
     }
 
-    .reading-column {
+    .article-shell.has-toc .reading-column {
       margin: 0;
     }
   }
