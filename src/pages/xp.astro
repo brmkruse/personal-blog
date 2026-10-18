@@ -79,10 +79,11 @@ const roles = [
   },
   {
     title: 'Senior Manager, Enterprise Sales Development',
-    company: 'BigCommerce',
+    company: null,
+    descriptor: null,
     logo: null,
     logoClass: null,
-    location: 'Austin, TX',
+    location: null,
     dates: null,
     bullets: [
       'Led the Enterprise SDR team to exceed quota; scaled headcount from 2 to 16 ICs + 2 managers, and promoted 6 team members in 18 months.',
@@ -173,9 +174,11 @@ const roles = [
               <div class="role-copy">
                 <div class="role-head">
                   <h3 class="role-title">
-                    {role.title} <span class="co">· {role.company}</span>
+                    {role.title} {role.company && <span class="co">· {role.company}</span>}
                   </h3>
-                  <p class="loc">{role.location}{role.descriptor ? ` | ${role.descriptor}` : ''}</p>
+                  {role.location && (
+                    <p class="loc">{role.location}{role.descriptor ? ` | ${role.descriptor}` : ''}</p>
+                  )}
                 </div>
                 <ul>
                   {role.bullets.map((b) => (
