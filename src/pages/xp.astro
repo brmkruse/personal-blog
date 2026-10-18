@@ -51,8 +51,9 @@ const competencies = [
 
 const roles = [
   {
-    title: 'Manager, Commercial Sales',
+    title: 'Manager, Commercial Sales — Central',
     company: 'Rapid7',
+    descriptor: 'Cybersecurity platform (MDR, SIEM, CNAPP, CTEM)',
     logo: 'rapid7',
     logoClass: 'wordmark',
     location: 'Austin, TX',
@@ -64,8 +65,9 @@ const roles = [
     ],
   },
   {
-    title: 'Senior Account Executive, Mid-Market',
-    company: 'BigCommerce',
+    title: 'Senior Account Executive, Mid-Market — TOLA/Southeast',
+    company: 'BigCommerce (now Commerce)',
+    descriptor: 'Headless, API-first commerce platform',
     logo: 'bigcommerce',
     logoClass: 'mark',
     location: 'Austin, TX',
@@ -88,8 +90,9 @@ const roles = [
     ],
   },
   {
-    title: 'Manager, Outbound Business - Large Enterprise & Strategic',
-    company: 'Box',
+    title: 'Manager, Outbound Business — Enterprise, Large Enterprise & Strategic',
+    company: 'Box, Inc.',
+    descriptor: 'Cloud Content Management & Intelligence platform',
     logo: 'box',
     logoClass: 'wordmark',
     location: 'Austin, TX',
@@ -102,16 +105,16 @@ const roles = [
     ],
   },
   {
-    title: 'Account Executive and Sales Manager',
-    company: 'uShip',
+    title: 'Commercial Account Executive & Sales Manager',
+    company: 'uShip, Inc.',
+    descriptor: 'Series B logistics platform',
     logo: 'uship',
     logoClass: 'wordmark',
     location: 'Austin, TX',
     dates: '2012 – 2016',
     bullets: [
-      'Joined company in Series B stage as 90th employee.',
-      'Helped deliver uShip\'s first B2B logistics platform for customers shipping large volumes of freight (LTL, FTL, etc.)',
-      'Worked cross-functionally with engineering, product, and ELT to scale and build out company\'s B2B sales motion.',
+      'One of the first sales hires (employee #92); top-performing AE promoted to company’s first Sales Manager role.',
+      'Built the first B2B sales motion from $0 to $1MM with Engineering, Product, Marketing, and the executive team.',
     ],
   },
 ];
@@ -172,7 +175,7 @@ const roles = [
                   <h3 class="role-title">
                     {role.title} <span class="co">· {role.company}</span>
                   </h3>
-                  <p class="loc">{role.location}</p>
+                  <p class="loc">{role.location}{role.descriptor ? ` | ${role.descriptor}` : ''}</p>
                 </div>
                 <ul>
                   {role.bullets.map((b) => (
