@@ -13,38 +13,43 @@ const companyLogos = {
 
 const competencies = [
   {
-    title: 'Technical Sales',
+    title: 'Technical Selling',
     items: [
       'Full-Cycle Ownership',
       'Multi-Threading',
-      'C-suite, Engineering, & AI-Leader Engagement',
+      'Security, Engineering & C-suite Engagement',
       'Problem & Workflow Mapping',
-      'POC / POV Project Management',
-      'Value & Outcome-driven ROI',
-      'Legal / Procurement Negotiation',
-      'Enterprise Deployment & Integration',
+      'POC/POV Project Management',
+      'Business Case Development',
+      'Legal & Procurement Negotiation',
+      'Deployment & Integration',
     ],
   },
   {
-    title: 'Cloud, Security & AI',
+    title: 'Security, Cloud & AI',
     items: [
-      'Frontier LLMs & Agentic Workflows',
-      'SDLC & Developer Workflows',
-      'Cloud Security Platforms (CNAPP, SIEM, MDR, CTEM)',
-      'AppSec / Vulnerability Remediation',
-      'Security & Compliance (SOC 2, HIPAA, PCI, ISO27001)',
+      'Security Platforms (MDR, CNAPP, SIEM, VRM, CTEM, SOAR)',
+      'Network & Application Security',
+      'Identity Security (IAM/PAM/ZTA/NHI)',
+      'Cloud Infrastructure',
+      'GenAI',
+      'Cloud Agents (Claude Code, OpenClaw, Grok Bot)',
+      'LLM Models, Harnesses & Gateways',
+      'MCP Servers',
     ],
   },
   {
     title: 'GTM Execution',
     items: [
-      'New Logo Land & Expansion',
-      'Territory & Pipeline Development',
-      'Channel / VAR Co-Sell',
+      'Pipeline & Playbook Development',
+      'Land & Expansion',
+      'Territory & Account Planning',
       'MEDDPICC',
-      'Forecasting Accuracy',
-      'Cross-Functional Close (SE, Product, Engineering, Legal)',
-      'Product Feedback Loops',
+      'Cross-Functional Close (SE, Services, Product, Engineering, Legal)',
+      'Channel / VAR Co-Sell',
+      'Product & Marketing Feedback Loops',
+      'PLG & Sales-led motions',
+      'GTM tech: SFDC, Gong, Clari, Claude',
     ],
   },
 ];
@@ -156,7 +161,14 @@ const roles = [
               <h3>{group.title}</h3>
               <ul>
                 {group.items.map((item) => (
-                  <li>{item}</li>
+                  <li>
+                    {item.split('C-suite').map((part, i) => (
+                      <>
+                        {i > 0 && <span class="nowrap">C-suite</span>}
+                        {part}
+                      </>
+                    ))}
+                  </li>
                 ))}
               </ul>
             </div>
@@ -311,6 +323,10 @@ const roles = [
   .comp-card li:first-child {
     border-top: none;
     padding-top: 0;
+  }
+
+  .comp-card .nowrap {
+    white-space: nowrap;
   }
 
   .roles {
