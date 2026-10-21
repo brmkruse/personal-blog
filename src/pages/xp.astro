@@ -54,6 +54,24 @@ const competencies = [
   },
 ];
 
+// Phrases kept on one line in Experience bullets.
+const nowrapTerms = [
+  'six-figure',
+  'run-rate',
+  '$20MM',
+  'sales-sourced',
+  'post-sales',
+  'FY19 112%',
+  'FY20 127%',
+  'FY21 141%',
+  'FY22 87%',
+  '$1.2MM',
+];
+const escapeRegExp = (t: string) => t.replace(/[.*+?^$()|[\]\\{}]/g, '\\$&');
+const nowrapPattern = new RegExp('(' + nowrapTerms.map(escapeRegExp).join('|') + ')');
+const splitNowrap = (text: string) =>
+  text.split(nowrapPattern).map((part) => ({ part, nowrap: nowrapTerms.includes(part) }));
+
 const roles = [
   {
     title: 'Manager, Commercial Sales — Central',
@@ -64,9 +82,8 @@ const roles = [
     location: 'Austin, TX',
     dates: '2023 – Aug. 2026',
     bullets: [
-      'Own full GTM and revenue ownership for the Central Commercial territory, running and supporting end-to-end sales cycles for a cybersecurity platform into mid-market accounts alongside a 6-person AE team, including land and expansion deals.',
-      'Led the team to exceed quota; President\'s Club achiever with company-wide recognition for top sales performance.',
-      'Sold directly to CIOs and CISOs, Security/Cloud Engineers, Security Architects, DevSecOps engineers, Platform/Infrastructure engineers.',
+      'Owned a $20MM run-rate book with customers across FinServ, Healthcare, Tech, and Manufacturing, while also running multiple six-figure deal cycles directly with CIOs, CISOs, CTOs, security, cloud and infrastructure engineers.',
+      'Led the team to exceed quota and achieve President\'s Club recognition for outstanding performance.',
     ],
   },
   {
@@ -78,8 +95,9 @@ const roles = [
     location: 'Austin, TX',
     dates: '2018 – 2023',
     bullets: [
-      'Owned full end-to-end sales cycle selling a headless commerce platform into mid-market accounts, consistently exceeding quota.',
-      'Sold directly to backend and platform engineers, DevOps/SRE teams, CTOs, and other technology leaders responsible for integrations, customizations, APIs, and site performance.',
+      '116% average attainment over four years: FY19 112%, FY20 127%, FY21 141%, FY22 87% on a $1.2MM quota.',
+      'Sold to CTOs, frontend and backend engineers, and SRE teams responsible for integrations, APIs, customizations, and site performance at mid-market and F1000 accounts.',
+      'Partnered with Solutions Engineers to run technical discovery, demos, POCs, and post-sales deployment calls.',
     ],
   },
   {
@@ -104,10 +122,8 @@ const roles = [
     location: 'Austin, TX',
     dates: '2016 – 2018',
     bullets: [
-      'Led a team of 8–15 SDRs to exceed quota supporting Enterprise, Large Enterprise, and Strategic segments.',
-      'Created the company\'s first dedicated OBR role for Box Platform (API) to align with SVP of Platform GTM strategy.',
-      'Helped scale IC headcount from 18 to 47 and manager headcount from 2 to 6 across U.S. and U.K.; hired and remote-managed the first SDR team in the NYC office; promoted 8 ICs internally within 2 years.',
-      'Engaged with platform engineers, engineering team leads and managers, VP of Engineering, and CTOs to build top of funnel.',
+      'Developed outbound playbook that led to 127% annual quota attainment supporting Enterprise, Large Enterprise, and Strategic accounts.',
+      'Engaged CIOs, CDOs, Enterprise Architects, Platform & Infrastructure Engineers to generate outbound, sales-sourced pipeline.',
     ],
   },
   {
@@ -197,7 +213,11 @@ const roles = [
                 </div>
                 <ul>
                   {role.bullets.map((b) => (
-                    <li>{b}</li>
+                    <li>
+                      {splitNowrap(b).map(({ part, nowrap }) =>
+                        nowrap ? <span class="nowrap">{part}</span> : part,
+                      )}
+                    </li>
                   ))}
                 </ul>
               </div>
